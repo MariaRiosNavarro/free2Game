@@ -1,10 +1,13 @@
+import Aside from "../Aside/Aside";
+import NavBar from "../NavBar/NavBar";
 import "./Header.css";
 
 const Header = () => {
   return (
-    <div>
-      <h2>Header</h2>
-    </div>
+    <header>
+      <NavBar />
+      <Aside />
+    </header>
   );
 };
 

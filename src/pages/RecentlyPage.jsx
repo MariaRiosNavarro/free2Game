@@ -1,7 +1,9 @@
+import Header from "../components/Header/Header";
+
 const RecentlyPage = () => {
   return (
-    <div>
-      <h2>RecentlyPage</h2>
+    <div style={{ height: "150vh", boxSizing: "border-box" }}>
+      <Header />
     </div>
   );
 };

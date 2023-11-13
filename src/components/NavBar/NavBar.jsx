@@ -1,8 +1,12 @@
+import Logo from "../../assets/img/Logo.svg";
+import "./NavBar.css";
+
 const NavBar = () => {
   return (
-    <div>
-      <h2>NavBar</h2>
-    </div>
+    <nav>
+      <img src={Logo} alt="" />
+      <input type="text" />
+    </nav>
   );
 };
 
