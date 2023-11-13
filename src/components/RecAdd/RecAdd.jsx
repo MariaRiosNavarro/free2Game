@@ -19,18 +19,18 @@ const RecAdd = () => {
   useEffect(() => {
     fetch(url, options)
       .then((response) => response.json())
-      .then((games) => setNewGames(games))
+      .then((games) => setNewGames(games.slice(0, 4)))
       .catch((err) => console.error("Fetch Isue", err));
   }, []);
 
   console.log(newGames);
 
   return (
-    <section>
+    <section className="rec-add-wrapper">
       {newGames ? (
-        newGames.map((item, index) => (
+        newGames.map((item) => (
           <Card
-            key={index}
+            key={item.id}
             title={item.title}
             thumbnail={item.thumbnail}
             description={true}

@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 
 const Card = (props) => {
   return (
-    <article>
+    <article className="card">
       <div className="img-wrapper">
         <img src={props.thumbnail} alt={props.title} />
       </div>
