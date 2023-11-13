@@ -46,3 +46,9 @@ p {
   font-family: titi;
   line-height: normal;
 }
+
+/* ---- Images ----- */
+
+img {
+  border-radius: 24px;
+}

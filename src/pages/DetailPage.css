@@ -1,3 +1,13 @@
+.detail-page {
+  width: 100vw;
+  padding: 1vh 2vw;
+}
+
+.big-image img {
+  width: 80vw;
+  border-radius: 24px;
+  margin-bottom: 10vh;
+}
 .game-preview {
   width: 39vw;
 }
@@ -11,6 +21,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5vw;
+  padding: 0 4vw;
+}
+
+.detail-grid img {
+  width: 491px;
 }
 
 .detail-2col {
@@ -27,8 +42,4 @@
 .require-flex {
   display: flex;
   gap: 3vw;
-}
-
-.big-image {
-  width: 100vw;
 }
