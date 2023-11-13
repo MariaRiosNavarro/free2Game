@@ -20,7 +20,7 @@ const NavBar = (props) => {
   const handleOnSelect = (item) => {
     // the item selected
     console.log(item);
-    navigate(`/details/${item.id}`);
+    navigate(`/detail/${item.id}`);
   };
 
   const handleOnFocus = () => {
