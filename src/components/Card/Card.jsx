@@ -1,6 +1,7 @@
 import "./Card.css";
+import Button from "../Button/Button";
 
-const Card = () => {
+const Card = (props) => {
   return (
     <article>
       <div className="img-wrapper">
@@ -12,9 +13,7 @@ const Card = () => {
           <p className="description">{props.short_description}</p>
         ) : null}
       </div>
-      <Link to={`/detail/${props.id}`}>
-        <button>READ MORE</button>
-      </Link>
+      <Button href={`/detail/${props.id}`} btnName="READ MORE" />
       <hr className="separation-line" />
       <div className="badge-wrapper">
         <span className="badge">{props.platform}</span>
