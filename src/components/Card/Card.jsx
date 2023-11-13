@@ -14,17 +14,17 @@ const Card = (props) => {
         {props.description ? (
           <p className="description">{props.short_description}</p>
         ) : null}
-      </div>
-      <Button href={`/detail/${props.id}`} btnName="READ MORE" />
-      <hr className="separation-line" />
-      <div className="badge-wrapper">
-        <span className="badge badge-img-wrapper">
-          <img
-            src={props.platform === "PC (Windows)" ? Pc : Browser}
-            alt={props.title}
-          />
-        </span>
-        <span className="badge bagge-genre">{props.genre}</span>
+        <Button href={`/detail/${props.id}`} btnName="READ MORE" />
+        <hr className="separation-line" />
+        <div className="badge-wrapper">
+          <span className="badge badge-img-wrapper">
+            <img
+              src={props.platform === "Web Browser" ? Browser : Pc}
+              alt={props.title}
+            />
+          </span>
+          <span className="badge bagge-genre">{props.genre}</span>
+        </div>
       </div>
     </article>
   );

@@ -1,0 +1,8 @@
+.home-page {
+  width: 100vw;
+  background-color: #040f14;
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

@@ -6,7 +6,7 @@ const RecAdd = () => {
   const [newGames, setNewGames] = useState([]);
 
   const url =
-    "https://free-to-play-games-database.p.rapidapi.com/api/games?sort_by=release-date";
+    "https://free-to-play-games-database.p.rapidapi.com/api/games?sort_by=popularity";
 
   const options = {
     method: "GET",

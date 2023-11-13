@@ -13,3 +13,28 @@
   max-width: 100%;
   object-fit: cover;
 }
+
+.badge-wrapper {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.badge-img-wrapper {
+  background-color: #040f14;
+  height: 36px;
+  width: 40px;
+  overflow: hidden;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.badge-img-wrapper svg {
+  fill: white;
+}
+
+/* .badge-img-wrapper img {
+  width: auto;
+} */

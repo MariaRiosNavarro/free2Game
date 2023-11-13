@@ -1,13 +1,12 @@
 import "./TopPC.css";
 import Card from "../Card/Card";
 import { useState, useEffect } from "react";
-import Pc from "../../assets/img/PC.svg";
 
 const TopPC = () => {
   const [topPCGames, setToptPCGames] = useState([]);
 
   const url =
-    "https://free-to-play-games-database.p.rapidapi.com/api/games?platform=pc&sort-by=popularity";
+    "https://free-to-play-games-database.p.rapidapi.com/api/games?platform=pc&sort-by=release-date";
 
   const options = {
     method: "GET",
@@ -39,7 +38,6 @@ const TopPC = () => {
               thumbnail={item.thumbnail}
               description={false}
               short_description={item.short_description}
-              platform={Pc}
               genre={item.genre}
               id={item.id}
             />
