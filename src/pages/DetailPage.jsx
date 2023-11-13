@@ -34,8 +34,13 @@ const DetailPage = () => {
     <section className="detail-page">
       <div className="big-image">
         {game.screenshots?.map((item, index) =>
-          index <= 1 ? (
-            <img key={index} src={item.image} alt="" className="game-preview" />
+          index === 2 ? (
+            <img
+              key={item.id}
+              src={item.image}
+              alt=""
+              className="game-preview"
+            />
           ) : null
         )}
       </div>
@@ -55,14 +60,14 @@ const DetailPage = () => {
       </div>
 
       <div className="detail-2col">
-        {/* {game.screenshots?.map((item, index) => {
-          return (
-            <img key={index} src={item.image} alt="" className="game-preview" />
-          );
-        })} */}
         {game.screenshots?.map((item, index) =>
           index <= 1 ? (
-            <img key={index} src={item.image} alt="" className="game-preview" />
+            <img
+              key={item.id}
+              src={item.image}
+              alt=""
+              className="game-preview"
+            />
           ) : null
         )}
       </div>
@@ -91,18 +96,18 @@ const DetailPage = () => {
           <div className="require-flex">
             <div>
               <h4>OS</h4>
-              <p>{game.minimum_system_requirements.os}</p>
+              <p>{game.minimum_system_requirements?.os}</p>
               <h4>Memory</h4>
-              <p>{game.minimum_system_requirements.memory}</p>
+              <p>{game.minimum_system_requirements?.memory}</p>
               <h4>Storage</h4>
-              <p>{game.minimum_system_requirements.storage}</p>
+              <p>{game.minimum_system_requirements?.storage}</p>
             </div>
 
             <div>
               <h4>Processor</h4>
-              <p>{game.minimum_system_requirements.processor}</p>
+              <p>{game.minimum_system_requirements?.processor}</p>
               <h4>Graphics</h4>
-              <p>{game.minimum_system_requirements.graphics}</p>
+              <p>{game.minimum_system_requirements?.graphics}</p>
               <h4>Additional Notes</h4>
               <p>Specifications may change during development</p>
             </div>
