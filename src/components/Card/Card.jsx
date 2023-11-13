@@ -1,5 +1,7 @@
 import "./Card.css";
 import Button from "../Button/Button";
+import Pc from "../../assets/img/PC.svg";
+import Browser from "../../assets/img/Browser.svg";
 
 const Card = (props) => {
   return (
@@ -16,8 +18,13 @@ const Card = (props) => {
       <Button href={`/detail/${props.id}`} btnName="READ MORE" />
       <hr className="separation-line" />
       <div className="badge-wrapper">
-        <span className="badge">{props.platform}</span>
-        <span className="badge">{props.genre}</span>
+        <span className="badge badge-img-wrapper">
+          <img
+            src={props.platform === "PC (Windows)" ? Pc : Browser}
+            alt={props.title}
+          />
+        </span>
+        <span className="badge bagge-genre">{props.genre}</span>
       </div>
     </article>
   );
