@@ -2,6 +2,7 @@ import RecAdd from "../components/RecAdd/RecAdd";
 import TopPC from "../components/TopPC/TopPC";
 import Button from "../components/Button/Button";
 import "./HomePage.css";
+import TopBrowser from "../components/TopBrowser/TopBrowser";
 
 const HomePage = () => {
   return (
@@ -12,6 +13,7 @@ const HomePage = () => {
       <h3>Top 4 Games in November 2023</h3>
       <TopPC />
       <Button href="/allgames" btnName="SHOW MORE" />
+      <TopBrowser />
     </div>
   );
 };
