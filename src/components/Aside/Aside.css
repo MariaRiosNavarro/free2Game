@@ -1,21 +1,33 @@
 aside {
-  /* position: absolute; */
+  position: absolute;
   background-color: black;
   display: flex;
   flex-direction: column;
   /* align-items: center; */
   justify-content: space-around;
-  width: 7vw;
+  width: 100px;
   height: 100vh;
   transition: 0.5s ease-in-out;
+  border-right: 3px solid red;
 }
 
 aside a {
   text-decoration: none;
 }
 
+aside .active .asideIcon {
+  background-color: red;
+  border-radius: 40px;
+}
+
 .asideWide {
-  width: 30vw;
+  /* transition: 0.5s ease-in-out; */
+  width: 40vw;
+}
+
+.asideWide .asideIcon {
+  width: 38vw;
+  /* padding-right: 20px; */
 }
 
 aside .asideIcon {
@@ -36,3 +48,7 @@ aside .asideIcon p {
   font-size: 30px;
   color: white;
 }
+
+/* aside .asideIcon:hover p {
+  color: tomato;
+} */

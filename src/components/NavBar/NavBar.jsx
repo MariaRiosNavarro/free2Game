@@ -1,15 +1,67 @@
 import Logo from "../../assets/img/Logo.svg";
 import "./NavBar.css";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import Search from "../../assets/img/Search.svg";
+import { ReactSearchAutocomplete } from "react-search-autocomplete";
 
-const NavBar = () => {
+const NavBar = (props) => {
+  const handleOnSearch = (string, results) => {
+    // onSearch will have as the first callback parameter
+    // the string searched and for the second the results.
+    // console.log(string, results);
+  };
+
+  const handleOnHover = (result) => {
+    // the item hovered
+    // console.log(result);
+  };
+
+  const handleOnSelect = (item) => {
+    // the item selected
+    console.log(item);
+
+    Navigate();
+  };
+
+  const handleOnFocus = () => {
+    // console.log("Focused");
+  };
+
+  const formatResult = (item) => {
+    return (
+      <>
+        <span style={{ display: "block", textAlign: "left" }}>
+          {item.title}
+        </span>
+      </>
+    );
+  };
   return (
     <nav>
       <Link to={"/"}>
         <img src={Logo} alt="" />
       </Link>
 
-      <input type="text" />
+      <div className="search">
+        <ReactSearchAutocomplete
+          items={props.item}
+          fuseOptions={{ keys: ["title", "description"] }}
+          resultStringKeyName="title"
+          onSearch={handleOnSearch}
+          onHover={handleOnHover}
+          onSelect={handleOnSelect}
+          onFocus={handleOnFocus}
+          autoFocus
+          formatResult={formatResult}
+          styling={{
+            backgroundColor: "#375470",
+            color: "white",
+            iconColor: "white",
+            border: "none",
+            hoverBackgroundColor: "#152f47",
+          }}
+        />
+      </div>
     </nav>
   );
 };

@@ -5,41 +5,45 @@ import Games from "../../assets/img/Games.svg";
 import Home from "../../assets/img/Home.svg";
 import Added from "../../assets/img/Added.svg";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Aside = () => {
+  // # Toggelt die sidebar und dementsprechend die buttons, standardmäßig false
   const [sideBar, showSide] = useState(false);
 
   const showBar = () => {
     showSide(!sideBar);
   };
 
-  console.log(sideBar);
-
   return (
+    // ! sideBar ? "true= sidebar erscheint und burgermenü wird zu close button" : " alles umgedreht";
     <aside className={sideBar ? "asideWide" : null}>
-      <img src={BurgerIcon} onClick={showBar} alt="" />
+      {sideBar ? (
+        <img src={CloseIcon} onClick={showBar} alt="" />
+      ) : (
+        <img src={BurgerIcon} onClick={showBar} alt="" />
+      )}
 
-      <Link to={"/"}>
+      <NavLink to={"/"}>
         <div className="asideIcon">
           <img src={Home} alt="" />
-          <p>Home</p>
+          {sideBar ? <p>Home</p> : null}
         </div>
-      </Link>
+      </NavLink>
 
-      <Link to={"/allgames"}>
+      <NavLink to={"/allgames"}>
         <div className="asideIcon">
           <img src={Games} alt="" />
-          <p>All Games</p>
+          {sideBar ? <p>All Games</p> : null}
         </div>
-      </Link>
+      </NavLink>
 
-      <Link to={"/recently"}>
+      <NavLink to={"/recently"}>
         <div className="asideIcon">
           <img src={Added} alt="" />
-          <p>Recently Added</p>
+          {sideBar ? <p>Recently Added</p> : null}
         </div>
-      </Link>
+      </NavLink>
     </aside>
   );
 };

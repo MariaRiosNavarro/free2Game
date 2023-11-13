@@ -4,9 +4,14 @@ nav {
   width: 100vw;
   display: flex;
   justify-content: space-between;
-  top: 0;
+  z-index: 1;
+  padding: 2vh 3vw;
 }
 
 nav a {
   text-decoration: none;
+}
+
+.search {
+  width: 300px;
 }
