@@ -1,7 +1,7 @@
 import "./Card.css";
 import Button from "../Button/Button";
 
-const Card = () => {
+const Card = (props) => {
   return (
     <article>
       <div className="img-wrapper">
