@@ -27,14 +27,19 @@ const Aside = () => {
         </div>
       </Link>
 
-      <div className="asideIcon">
-        <img src={Games} alt="" />
-        <p>All Games</p>
-      </div>
-      <div className="asideIcon">
-        <img src={Added} alt="" />
-        <p>Recently Added</p>
-      </div>
+      <Link to={"/allgames"}>
+        <div className="asideIcon">
+          <img src={Games} alt="" />
+          <p>All Games</p>
+        </div>
+      </Link>
+
+      <Link to={"/recently"}>
+        <div className="asideIcon">
+          <img src={Added} alt="" />
+          <p>Recently Added</p>
+        </div>
+      </Link>
     </aside>
   );
 };
