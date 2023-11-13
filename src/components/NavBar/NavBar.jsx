@@ -19,8 +19,6 @@ const NavBar = (props) => {
   const handleOnSelect = (item) => {
     // the item selected
     console.log(item);
-
-    Navigate();
   };
 
   const handleOnFocus = () => {
