@@ -1,10 +1,11 @@
 import Logo from "../../assets/img/Logo.svg";
 import "./NavBar.css";
-import { Link, Navigate } from "react-router-dom";
-import Search from "../../assets/img/Search.svg";
+import { Link, useNavigate } from "react-router-dom";
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
 
 const NavBar = (props) => {
+  const navigate = useNavigate();
+
   const handleOnSearch = (string, results) => {
     // onSearch will have as the first callback parameter
     // the string searched and for the second the results.
@@ -19,6 +20,7 @@ const NavBar = (props) => {
   const handleOnSelect = (item) => {
     // the item selected
     console.log(item);
+    navigate(`/details/${item.id}`);
   };
 
   const handleOnFocus = () => {
