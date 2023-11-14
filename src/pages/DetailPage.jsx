@@ -45,6 +45,7 @@ const DetailPage = () => {
           ) : null
         )}
       </div>
+
       <div className="detail-grid">
         <div>
           <h1>{game.title}</h1>
