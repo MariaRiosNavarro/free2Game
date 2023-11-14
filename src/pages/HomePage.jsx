@@ -4,12 +4,14 @@ import "./HomePage.css";
 import HomeSlider from "../components/HomeSlider/HomeSlider.jsx";
 
 const HomePage = ({ newGames }) => {
+  const randomIndex = Math.round(Math.random() * 19);
+  console.log(randomIndex);
   return (
     <div className="home-page">
       <div className="image-title-wrapper">
         <div className="big-image">
           {newGames.map((item, index) =>
-            index === 10 ? (
+            index === randomIndex ? (
               <img
                 key={item.id}
                 src={item.thumbnail}
