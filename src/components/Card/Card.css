@@ -1,4 +1,7 @@
 .card {
+  border-radius: 20px;
+  background: #102130;
+
   display: flex;
   flex-direction: column;
 }
@@ -14,17 +17,39 @@
   object-fit: cover;
 }
 
+.text-wrapper {
+  padding: 0 2vw;
+}
+
+.text-wrapper h4 {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  height: 5vh;
+}
+
+.text-wrapper button {
+  margin-bottom: 4vh;
+}
+
+.separation-line {
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 110%;
+  height: 2px;
+  margin-left: -12px;
+  margin-bottom: 2vh;
+}
 .badge-wrapper {
   display: flex;
   gap: 12px;
   align-items: center;
+  margin-bottom: 3vh;
 }
 
 .badge-img-wrapper {
-  background-color: #040f14;
   height: 36px;
   width: 40px;
   overflow: hidden;
+  border: 1px solid #ff4654;
   border-radius: 15px;
   display: flex;
   justify-content: center;

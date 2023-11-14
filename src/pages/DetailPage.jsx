@@ -30,7 +30,7 @@ const DetailPage = () => {
   console.log(game);
 
   return (
-    <section className="detail-page">
+    <section className="detail-page page-style">
       <div className="big-image">
         {game.screenshots?.map((item, index) =>
           index === 2 ? (
@@ -45,11 +45,12 @@ const DetailPage = () => {
       </div>
 
       <div className="detail-grid">
-        <div>
+        <div className="detail-flex">
           <h1>{game.title}</h1>
           <img src={game.thumbnail} alt={game.title} />
           <h3>Plattform: {game.platform}</h3>
           <p className="card-category">{game.genre}</p>
+          <br />
           <Button href={game.game_url} btnName="Play now" />
         </div>
 
