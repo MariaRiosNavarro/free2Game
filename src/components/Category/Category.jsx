@@ -20,6 +20,8 @@ const Category = ({ genres }) => {
     setIsOpenSortBy(!isOpenSortBy);
   };
 
+  // const copyArray = [...newGames];
+
   return (
     <div className="categoryContainer">
       <div className="custom-dropdown">

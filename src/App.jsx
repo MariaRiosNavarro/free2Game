@@ -10,7 +10,8 @@ import { useState, useEffect } from "react";
 function App() {
   const [newGames, setNewGames] = useState([]);
 
-  const url = "https://free-to-play-games-database.p.rapidapi.com/api/games";
+  const url = `https://free-to-play-games-database.p.rapidapi.com/api/games`;
+  // const urlRecently = `https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=release-date`;
 
   const options = {
     method: "GET",
@@ -33,8 +34,14 @@ function App() {
         <Header newGames={newGames} />
         <Routes>
           <Route path="/" element={<HomePage newGames={newGames} />}></Route>
-          <Route path="/allgames" element={<AllGamesPage />}></Route>
-          <Route path="/recently" element={<RecentlyPage />}></Route>
+          <Route
+            path="/allgames"
+            element={<AllGamesPage newGames={newGames} />}
+          ></Route>
+          <Route
+            path="/recently"
+            element={<RecentlyPage newGames={newGames} />}
+          ></Route>
           <Route path="/detail/:id" element={<DetailPage />}></Route>
         </Routes>
       </BrowserRouter>
