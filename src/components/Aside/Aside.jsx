@@ -19,31 +19,37 @@ const Aside = () => {
     // ! sideBar ? "true= sidebar erscheint und burgermenü wird zu close button" : " alles umgedreht";
     <aside className={sideBar ? "asideWide" : null}>
       {sideBar ? (
-        <img src={CloseIcon} onClick={showBar} alt="" />
+        <div className="menu-icon">
+          <img src={CloseIcon} onClick={showBar} alt="" />
+        </div>
       ) : (
-        <img src={BurgerIcon} onClick={showBar} alt="" />
+        <div className="menu-icon">
+          <img src={BurgerIcon} onClick={showBar} alt="" />
+        </div>
       )}
 
-      <NavLink to={"/"}>
-        <div className="asideIcon">
-          <img src={Home} alt="" />
-          {sideBar ? <p>Home</p> : null}
-        </div>
-      </NavLink>
+      <div className="navicon-wrapper">
+        <NavLink to={"/"}>
+          <div className="asideIcon">
+            <img src={Home} alt="" />
+            {sideBar ? <p>Home</p> : null}
+          </div>
+        </NavLink>
 
-      <NavLink to={"/allgames"}>
-        <div className="asideIcon">
-          <img src={Games} alt="" />
-          {sideBar ? <p>All Games</p> : null}
-        </div>
-      </NavLink>
+        <NavLink to={"/allgames"}>
+          <div className="asideIcon">
+            <img src={Games} alt="" />
+            {sideBar ? <p>All Games</p> : null}
+          </div>
+        </NavLink>
 
-      <NavLink to={"/recently"}>
-        <div className="asideIcon">
-          <img src={Added} alt="" />
-          {sideBar ? <p>Recently Added</p> : null}
-        </div>
-      </NavLink>
+        <NavLink to={"/recently"}>
+          <div className="asideIcon">
+            <img src={Added} alt="" />
+            {sideBar ? <p>Recently Added</p> : null}
+          </div>
+        </NavLink>
+      </div>
     </aside>
   );
 };

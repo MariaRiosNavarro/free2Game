@@ -55,7 +55,7 @@ const DetailPage = () => {
 
         <div className="about">
           <h2>About</h2>
-          <p className="card-category">{game.description}</p>
+          <p>{game.description}</p>
         </div>
       </div>
 
