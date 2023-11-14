@@ -31,11 +31,15 @@ const HomeSlider = ({ apiUrlEnd, description }) => {
   );
 
   const handleShowMoreClick = () => {
-    setStartIndex(startIndex + 1);
+    if (startIndex < 15) {
+      setStartIndex(startIndex + 1);
+    }
   };
 
   const handleShowLessClick = () => {
-    setStartIndex(startIndex - 1);
+    if (startIndex >= 1) {
+      setStartIndex(startIndex - 1);
+    }
   };
 
   handleShowLessClick;
@@ -71,7 +75,7 @@ const HomeSlider = ({ apiUrlEnd, description }) => {
     <section className="slider-wrapper">
       {/*onMouseEnter={handleHoverIncrement} */}
       <button className="slider-button one" onClick={handleShowLessClick}>
-        -
+        ◀︎
       </button>
       <div className="slider-content">
         {visibleGamesSubset.map((item) => (
@@ -88,7 +92,7 @@ const HomeSlider = ({ apiUrlEnd, description }) => {
         ))}
       </div>
       <button className="slider-button two" onClick={handleShowMoreClick}>
-        ✚
+        ►
       </button>
     </section>
   );

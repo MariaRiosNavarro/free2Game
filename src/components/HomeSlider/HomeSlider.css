@@ -22,14 +22,23 @@
   width: 285px;
 }
 
-.two {
+.slider-button {
   position: absolute;
-  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 2rem;
+  opacity: 0;
   height: 100%;
 }
 
+.slider-wrapper:hover .slider-button {
+  opacity: 1;
+}
+
+.two {
+  right: 0;
+}
+
 .one {
-  position: absolute;
   left: 0;
-  height: 100%;
 }
