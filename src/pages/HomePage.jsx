@@ -3,9 +3,21 @@ import Button from "../components/Button/Button";
 import "./HomePage.css";
 import HomeSlider from "../components/HomeSlider/HomeSlider.jsx";
 
-const HomePage = () => {
+const HomePage = ({ newGames }) => {
   return (
     <div className="home-page">
+      <div className="big-image">
+        {newGames.map((item, index) =>
+          index === 10 ? (
+            <img
+              key={item.id}
+              src={item.thumbnail}
+              alt={item.title}
+              className="game-preview"
+            />
+          ) : null
+        )}
+      </div>
       <h3>Recently Added</h3>
       <HomeSlider apiUrlEnd="sort_by=popularity" description={true} />
       <Button href="/recently" btnName="SHOW MORE" />
