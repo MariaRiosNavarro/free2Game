@@ -66,16 +66,7 @@ const HomeSlider = ({ apiUrlEnd, description }) => {
       {/*onMouseEnter={handleHoverIncrement} */}
       <div className="slider-content">
         {visibleGamesSubset.map((item) => (
-          <Card
-            key={item.id}
-            title={item.title}
-            thumbnail={item.thumbnail}
-            description={description}
-            short_description={item.short_description}
-            platform={item.platform}
-            genre={item.genre}
-            id={item.id}
-          />
+          <Card key={item.id} description={description} item={item} />
         ))}
       </div>
       <button className="slider-button" onClick={handleShowMoreClick}>
