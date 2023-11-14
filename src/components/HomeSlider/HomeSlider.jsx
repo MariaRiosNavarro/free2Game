@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import Card from "../Card/Card";
 import "./HomeSlider.css";
 
-const HomeSlider = () => {
+const HomeSlider = ({ apiUrlEnd }) => {
   const [startIndex, setStartIndex] = useState(0);
   const [visibleGames, setVisibleGames] = useState([]);
+  //   const [isHovered, setIsHovered] = useState(false);
 
-  const url =
-    "https://free-to-play-games-database.p.rapidapi.com/api/games?sort_by=popularity";
+  const url = `https://free-to-play-games-database.p.rapidapi.com/api/games?${apiUrlEnd}`;
 
   const options = {
     method: "GET",
@@ -33,8 +33,36 @@ const HomeSlider = () => {
     setStartIndex(startIndex + 1);
   };
 
+  //   useEffect(() => {
+  //     let intervalId;
+
+  //     const handleHoverIncrement = () => {
+  //       intervalId = setInterval(() => {
+  //         setStartIndex((prevIndex) => (prevIndex + 1) % 16);
+  //       }, 1000);
+  //     };
+
+  //     const handleHoverEnd = () => {
+  //       clearInterval(intervalId);
+  //     };
+
+  //     const sliderWrapper = document.querySelector(".slider-wrapper");
+  //     if (sliderWrapper) {
+  //       sliderWrapper.addEventListener("mouseenter", handleHoverIncrement);
+  //       sliderWrapper.addEventListener("mouseleave", handleHoverEnd);
+  //     }
+
+  //     return () => {
+  //       if (sliderWrapper) {
+  //         sliderWrapper.removeEventListener("mouseenter", handleHoverIncrement);
+  //         sliderWrapper.removeEventListener("mouseleave", handleHoverEnd);
+  //       }
+  //     };
+  //   }, []);
+
   return (
-    <div className="slider-wrapper">
+    <section className="slider-wrapper">
+      {/*onMouseEnter={handleHoverIncrement} */}
       <div className="slider-content">
         {visibleGamesSubset.map((item) => (
           <Card
@@ -52,7 +80,7 @@ const HomeSlider = () => {
       <button className="slider-button" onClick={handleShowMoreClick}>
         ✚
       </button>
-    </div>
+    </section>
   );
 };
 
