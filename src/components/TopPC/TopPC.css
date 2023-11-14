@@ -1,0 +1,118 @@
+/* !Positionierung der 4 Karten */
+
+.top-pc-wrapper {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 493px 697px;
+  grid-template-rows: 263px 263px 263px;
+  grid-template-areas:
+    "game1 game2"
+    "game1 game3"
+    "game1 game4";
+  gap: 24px;
+  max-width: 100vw;
+  margin: 0 auto;
+}
+
+.card-wrapper {
+  width: 100%;
+}
+.card-wrapper .separation-line {
+  display: none;
+}
+
+.card-wrapper .card .badge {
+  background-color: #040f14;
+}
+
+.card-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #ff4654;
+  background-color: #040f14;
+  width: 58px;
+  height: 58px;
+  color: white;
+  font-size: 24px;
+  z-index: 5;
+}
+
+/* !Erste Karte */
+
+.card-wrapper-1 {
+  grid-area: game1;
+  position: relative;
+}
+
+.card-wrapper-1 .card {
+  position: relative;
+}
+
+.card-wrapper-1 .card img {
+  height: 837px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+.card-wrapper-1 .card .text-wrapper {
+  position: absolute;
+  left: 36px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  bottom: 195px;
+}
+
+.card-wrapper-1 .card .text-wrapper h3 {
+  font-size: 48px;
+}
+
+.card-wrapper-1 .card .badge-wrapper .badge-img-wrapper img {
+  z-index: 5;
+  background-color: #ff4654;
+}
+
+.card-wrapper-1 .card-number {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+}
+
+/* !Nächste 3 Karten */
+
+.card-wrapper-2 {
+  grid-area: game2;
+  position: relative;
+}
+.card-wrapper-3 {
+  grid-area: game3;
+  position: relative;
+}
+.card-wrapper-4 {
+  grid-area: game4;
+  position: relative;
+}
+
+.card-wrapper-2 .card,
+.card-wrapper-3 .card,
+.card-wrapper-4 .card {
+  flex-direction: row;
+}
+
+.card-wrapper-2 .card .img-wrapper,
+.card-wrapper-3 .card .img-wrapper,
+.card-wrapper-4 .card .img-wrapper {
+  width: 388px;
+}
+
+.card-wrapper-2 .card-number,
+.card-wrapper-3 .card-number,
+.card-wrapper-4 .card-number {
+  position: absolute;
+  left: 24px;
+  top: 24px;
+}

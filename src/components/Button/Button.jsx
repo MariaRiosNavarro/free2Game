@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Button = ({ href, btnName }) => {
   return (
-    <Link to={href}>
+    <Link to={href} className="btn-wrapper">
       <button className="btn">{btnName}</button>
     </Link>
   );
