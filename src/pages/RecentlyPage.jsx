@@ -1,7 +1,8 @@
 const RecentlyPage = () => {
   return (
-    <div>
-      <h2>RecentlyPage</h2>
+    // ! Nur zum testen eine höhe gegeben damit ich sehen kann ob der header sticky bleibt
+    <div style={{ height: "150vh", boxSizing: "border-box" }}>
+      {/* <Header /> */}
     </div>
   );
 };

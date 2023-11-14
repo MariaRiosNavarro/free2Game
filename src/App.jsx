@@ -4,11 +4,13 @@ import HomePage from "./pages/HomePage";
 import AllGamesPage from "./pages/AllGamesPage";
 import RecentlyPage from "./pages/RecentlyPage";
 import DetailPage from "./pages/DetailPage";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <>
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
           <Route path="/allgames" element={<AllGamesPage />}></Route>
