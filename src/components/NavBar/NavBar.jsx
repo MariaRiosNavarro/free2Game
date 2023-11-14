@@ -38,9 +38,9 @@ const NavBar = (props) => {
     );
   };
   return (
-    <nav>
+    <nav className="navbar">
       <Link to={"/"}>
-        <img src={Logo} alt="" />
+        <img src={Logo} alt="" className="logo" />
       </Link>
 
       <div className="search">
