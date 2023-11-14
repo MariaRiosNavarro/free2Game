@@ -54,7 +54,7 @@ const DetailPage = () => {
           <Button href={game.game_url} btnName="Play now" />
         </div>
 
-        <div>
+        <div className="about">
           <h2>About</h2>
           <p className="card-category">{game.description}</p>
         </div>
@@ -73,8 +73,8 @@ const DetailPage = () => {
         )}
       </div>
 
-      <div className="detail-grid">
-        <div>
+      <div className="detail-description">
+        <div className="info-wrapper">
           <h2>Additional Information</h2>
           <p>{game.short_description}</p>
           <div className="info-flex">
@@ -83,7 +83,7 @@ const DetailPage = () => {
               <h4>Publisher</h4>
               <h4>Release Date</h4>
             </div>
-            <div>
+            <div className="info-fetch">
               <p>{game.developer}</p>
               <p>{game.publisher}</p>
               <p>{game.release_date}</p>
@@ -91,7 +91,7 @@ const DetailPage = () => {
           </div>
         </div>
 
-        <div>
+        <div className="require-wrapper">
           <h2>Minimum System Requirements</h2>
           <h3>({game.platform})</h3>
           <div className="require-flex">
@@ -104,7 +104,7 @@ const DetailPage = () => {
               <p>{game.minimum_system_requirements?.storage}</p>
             </div>
 
-            <div>
+            <div className="require-fetch">
               <h4>Processor</h4>
               <p>{game.minimum_system_requirements?.processor}</p>
               <h4>Graphics</h4>
