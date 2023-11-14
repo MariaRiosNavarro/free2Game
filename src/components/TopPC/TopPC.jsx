@@ -24,8 +24,6 @@ const TopPC = () => {
       .catch((err) => console.error("Fetch Isue", err));
   }, []);
 
-  console.log("hey");
-
   return (
     <section className="top-pc-wrapper">
       {topPCGames ? (

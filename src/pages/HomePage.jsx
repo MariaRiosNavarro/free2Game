@@ -2,20 +2,51 @@ import TopPC from "../components/TopPC/TopPC";
 import Button from "../components/Button/Button";
 import "./HomePage.css";
 import HomeSlider from "../components/HomeSlider/HomeSlider.jsx";
+import { useState, useEffect } from "react";
 
 const HomePage = ({ newGames }) => {
-  const randomIndex = Math.round(Math.random() * 19);
-  console.log(randomIndex);
+  // Für die foto am header der seite Fetche ich ein detail Card statt eine aus der Liste von Newgames, da die Qualität der einzige Foto in jede object sehr klein und schlecht ist
+  const [game, setGame] = useState("");
+
+  useEffect(() => {
+    if (newGames.length === 0) {
+      return;
+    }
+    const randomIndex = Math.floor(Math.random() * newGames.length);
+    const oneGame = newGames[randomIndex];
+    const idOneRandomGame = oneGame.id;
+    console.log(idOneRandomGame);
+
+    const url = `https://free-to-play-games-database.p.rapidapi.com/api/game?id=${idOneRandomGame}`;
+    const options = {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": "2da045f70dmsh00a6d7151352363p157277jsn3936fc9a63e5",
+        "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
+      },
+      mode: "cors",
+    };
+
+    fetch(url, options)
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => setGame(data))
+      .catch((error) => {
+        console.error("Game Over: Try Again with your Fetch:", error);
+      });
+  }, [newGames]);
+
   return (
     <div className="home-page">
       <div className="image-title-wrapper">
         <div className="big-image">
-          {newGames.map((item, index) =>
-            index === randomIndex ? (
+          {game.screenshots?.map((item, index) =>
+            index === 0 ? (
               <img
                 key={item.id}
-                src={item.thumbnail}
-                alt={item.title}
+                src={item.image}
+                alt=""
                 className="game-preview"
               />
             ) : null
