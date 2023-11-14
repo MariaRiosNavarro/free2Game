@@ -17,6 +17,7 @@ const DetailPage = () => {
         "X-RapidAPI-Key": "2da045f70dmsh00a6d7151352363p157277jsn3936fc9a63e5",
         "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
       },
+      mode: "cors",
     };
 
     fetch(url, options)

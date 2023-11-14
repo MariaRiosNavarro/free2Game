@@ -15,6 +15,7 @@ const Header = () => {
       "X-RapidAPI-Key": "80bad1a5dbmshf2f932854360a23p117e26jsn6a9999a6e64f",
       "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
     },
+    mode: "cors",
   };
 
   useEffect(() => {
