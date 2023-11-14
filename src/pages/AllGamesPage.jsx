@@ -1,12 +1,12 @@
 import Category from "../components/Category/Category";
 import Gallery from "../components/Gallery/Gallery";
 
-const AllGamesPage = () => {
+const AllGamesPage = ({ newGames }) => {
   return (
     <div>
       <h2>AllGamesPage</h2>
-      <Category />
-      <Gallery />
+      <Category newGames={newGames} />
+      <Gallery newGames={newGames} />
     </div>
   );
 };
