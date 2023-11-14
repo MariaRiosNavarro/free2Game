@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Card from "../Card/Card";
+import Card from "../../Card/Card";
 import "./HomeSlider.css";
 
 const HomeSlider = ({ apiUrlEnd, description }) => {
