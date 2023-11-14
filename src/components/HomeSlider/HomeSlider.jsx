@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Card from "../Card/Card";
 import "./HomeSlider.css";
 
-const HomeSlider = ({ apiUrlEnd }) => {
+const HomeSlider = ({ apiUrlEnd, description }) => {
   const [startIndex, setStartIndex] = useState(0);
   const [visibleGames, setVisibleGames] = useState([]);
   //   const [isHovered, setIsHovered] = useState(false);
@@ -69,7 +69,7 @@ const HomeSlider = ({ apiUrlEnd }) => {
             key={item.id}
             title={item.title}
             thumbnail={item.thumbnail}
-            description={true}
+            description={description}
             short_description={item.short_description}
             platform={item.platform}
             genre={item.genre}
