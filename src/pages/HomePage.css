@@ -1,12 +1,23 @@
 .home-page {
+  margin: 0 auto;
   width: 100vw;
   background-color: #040f14;
   color: white;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  max-width: 1440px;
+  overflow: hidden;
 }
 
 .home-page .btn-wrapper {
   align-self: flex-end;
+}
+
+.image-title-wrapper {
+  position: relative;
+}
+
+.page-title {
+  position: absolute;
 }

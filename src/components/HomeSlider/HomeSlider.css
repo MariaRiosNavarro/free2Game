@@ -22,8 +22,14 @@
   width: 285px;
 }
 
-.slider-button {
+.two {
   position: absolute;
   right: 0;
+  height: 100%;
+}
+
+.one {
+  position: absolute;
+  left: 0;
   height: 100%;
 }

@@ -34,6 +34,12 @@ const HomeSlider = ({ apiUrlEnd, description }) => {
     setStartIndex(startIndex + 1);
   };
 
+  const handleShowLessClick = () => {
+    setStartIndex(startIndex - 1);
+  };
+
+  handleShowLessClick;
+
   //   useEffect(() => {
   //     let intervalId;
 
@@ -64,6 +70,9 @@ const HomeSlider = ({ apiUrlEnd, description }) => {
   return (
     <section className="slider-wrapper">
       {/*onMouseEnter={handleHoverIncrement} */}
+      <button className="slider-button one" onClick={handleShowLessClick}>
+        -
+      </button>
       <div className="slider-content">
         {visibleGamesSubset.map((item) => (
           <Card
@@ -78,7 +87,7 @@ const HomeSlider = ({ apiUrlEnd, description }) => {
           />
         ))}
       </div>
-      <button className="slider-button" onClick={handleShowMoreClick}>
+      <button className="slider-button two" onClick={handleShowMoreClick}>
         ✚
       </button>
     </section>

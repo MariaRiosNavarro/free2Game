@@ -6,17 +6,22 @@ import HomeSlider from "../components/HomeSlider/HomeSlider.jsx";
 const HomePage = ({ newGames }) => {
   return (
     <div className="home-page">
-      <div className="big-image">
-        {newGames.map((item, index) =>
-          index === 10 ? (
-            <img
-              key={item.id}
-              src={item.thumbnail}
-              alt={item.title}
-              className="game-preview"
-            />
-          ) : null
-        )}
+      <div className="image-title-wrapper">
+        <div className="big-image">
+          {newGames.map((item, index) =>
+            index === 10 ? (
+              <img
+                key={item.id}
+                src={item.thumbnail}
+                alt={item.title}
+                className="game-preview"
+              />
+            ) : null
+          )}
+        </div>
+        <h2 className="page-title">
+          Find & track the best free-to-play games!
+        </h2>
       </div>
       <h3>Recently Added</h3>
       <HomeSlider apiUrlEnd="sort_by=popularity" description={true} />
