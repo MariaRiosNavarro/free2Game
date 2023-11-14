@@ -3,6 +3,7 @@ import TopPC from "../components/TopPC/TopPC";
 import Button from "../components/Button/Button";
 import "./HomePage.css";
 import TopBrowser from "../components/TopBrowser/TopBrowser";
+import HomeSlider from "../components/HomeSlider/HomeSlider";
 
 const HomePage = () => {
   return (
@@ -14,6 +15,9 @@ const HomePage = () => {
       <TopPC />
       <Button href="/allgames" btnName="SHOW MORE" />
       <TopBrowser />
+      <hr />
+      <h4>TEST</h4>
+      <HomeSlider />
     </div>
   );
 };
