@@ -1,5 +1,6 @@
 import Category from "../components/Category/Category";
 import Gallery from "../components/Gallery/Gallery";
+import HeaderRandomPicture from "../components/HeaderRandomPicture/HeaderRandomPicture";
 
 const RecentlyPage = ({ newGames }) => {
   const copyArray = [...newGames];
@@ -14,7 +15,7 @@ const RecentlyPage = ({ newGames }) => {
 
   return (
     <div>
-      <h2>Recently</h2>
+      <HeaderRandomPicture newGames={newGames} titelPage="Recently Add" />
       <Gallery newGames={copyArray} />
     </div>
   );
