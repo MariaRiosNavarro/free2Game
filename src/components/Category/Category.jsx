@@ -16,7 +16,7 @@ const Category = ({ genres }) => {
   };
 
   return (
-    <div>
+    <div className="categoryContainer">
       <h2>Category</h2>
       <div className="custom-dropdown">
         <div

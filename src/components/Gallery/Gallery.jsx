@@ -29,7 +29,7 @@ const Gallery = () => {
   return (
     <div>
       <h2>Gallery</h2>
-      <section>
+      <section className="galleryContainer">
         {allGameData ? (
           allGameData.map((item, index) => (
             <Card
