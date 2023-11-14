@@ -4,8 +4,10 @@ import "./Category.css";
 const Category = ({ genres }) => {
   const [isOpenPlatform, setIsOpenPlatform] = useState(false);
   const [isOpenGenre, setIsOpenGenre] = useState(false);
+  const [isOpenSortBy, setIsOpenSortBy] = useState(false);
   const [selectedPlatform, setSelectedPlatform] = useState("PLATFORM");
   const [selectedGenre, setSelectedGenre] = useState("GENRE/TAG");
+  const [sortBy, setSortBy] = useState("SORT BY");
 
   const toggleMenuPlatform = () => {
     setIsOpenPlatform(!isOpenPlatform);
@@ -14,10 +16,12 @@ const Category = ({ genres }) => {
   const toggleMenuGenre = () => {
     setIsOpenGenre(!isOpenGenre);
   };
+  const toggleSortBy = () => {
+    setIsOpenSortBy(!isOpenSortBy);
+  };
 
   return (
     <div className="categoryContainer">
-      <h2>Category</h2>
       <div className="custom-dropdown">
         <div
           className="selected-Platform"
@@ -27,11 +31,19 @@ const Category = ({ genres }) => {
           {selectedPlatform === "platforms" ? "Platforms" : selectedPlatform}
         </div>
         {isOpenPlatform && (
-          <form action="">
-            <label htmlFor="windows">Windows</label>
-            <input type="checkbox" name="windows" id="windows" />
-            <label htmlFor="browser">Browser</label>
-            <input type="checkbox" name="browser" id="browser" />
+          <form action="" className="Form">
+            <div>
+              <input type="checkbox" name="allPlatforms" id="allPlatforms" />
+              <label htmlFor="allPlatforms">all Platforms</label>
+            </div>
+            <div>
+              <input type="checkbox" name="windows" id="windows" />
+              <label htmlFor="windows">Windows</label>
+            </div>
+            <div>
+              <input type="checkbox" name="browser" id="browser" />
+              <label htmlFor="browser">Browser</label>
+            </div>
           </form>
         )}
       </div>
@@ -44,11 +56,44 @@ const Category = ({ genres }) => {
           {selectedGenre === "genre" ? "Genre" : selectedGenre}
         </div>
         {isOpenGenre && (
-          <form action="" className="GenreInputs">
-            <label htmlFor="shooter">shooter</label>
-            <input type="checkbox" name="shooter" id="shooter" />
-            <label htmlFor="sci-fi">sci-fi</label>
-            <input type="checkbox" name="sci-fi" id="sci-fi" />
+          <form action="" className="Form">
+            <div>
+              <input type="checkbox" name="shooter" id="shooter" />
+              <label htmlFor="shooter">shooter</label>
+            </div>
+            <div>
+              <input type="checkbox" name="sci-fi" id="sci-fi" />
+              <label htmlFor="sci-fi">sci-fi</label>
+            </div>
+          </form>
+        )}
+      </div>
+      <div className="custom-dropdown">
+        <div
+          className="sortBy"
+          onClick={toggleSortBy}
+          onBlur={() => setIsOpenSortBy(false)}
+        >
+          {sortBy === "sortby" ? "SortBy" : sortBy}
+        </div>
+        {isOpenSortBy && (
+          <form action="" className="Form">
+            <div>
+              <input type="checkbox" name="relevance" id="relevance" />
+              <label htmlFor="relevance">Relevance</label>
+            </div>
+            <div>
+              <input type="checkbox" name="popularity" id="popularity" />
+              <label htmlFor="popularity">Popularity</label>
+            </div>
+            <div>
+              <input type="checkbox" name="releaseDate" id="releaseDate" />
+              <label htmlFor="releaseDate">Release Date</label>
+            </div>
+            <div>
+              <input type="checkbox" name="alphabetical" id="alphabetical" />
+              <label htmlFor="alphabetical">Alphabetical</label>
+            </div>
           </form>
         )}
       </div>
