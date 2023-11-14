@@ -7,23 +7,24 @@ const Card = (props) => {
   return (
     <article className="card">
       <div className="img-wrapper">
-        <img src={props.thumbnail} alt={props.title} />
+        <img src={props.item.thumbnail} alt={props.item.title} />
       </div>
       <div className="text-wrapper">
-        <h3 className="title">{props.title}</h3>
-        {props.description ? (
-          <p className="description">{props.short_description}</p>
+        <h3 className="title">{props.item.title}</h3>
+        {props.item.description ? (
+          <p className="description">{props.item.short_description}</p>
         ) : null}
-        <Button href={`/detail/${props.id}`} btnName="READ MORE" />
+        <Button href={`/detail/${props.item.id}`} btnName="READ MORE" />
         <hr className="separation-line" />
         <div className="badge-wrapper">
           <span className="badge badge-img-wrapper">
             <img
-              src={props.platform === "Web Browser" ? Browser : Pc}
-              alt={props.title}
+              src={props.item.platform === "Web Browser" ? Browser : Pc}
+              alt={props.item.title}
             />
+            {console.log(props.item.platform)}
           </span>
-          <span className="badge bagge-genre">{props.genre}</span>
+          <span className="badge bagge-genre">{props.item.genre}</span>
         </div>
       </div>
     </article>

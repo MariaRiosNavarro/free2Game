@@ -32,14 +32,7 @@ const TopPC = () => {
             className={`card-wrapper card-wrapper-${index + 1}`}
             key={item.id}
           >
-            <Card
-              title={item.title}
-              thumbnail={item.thumbnail}
-              description={false}
-              short_description={item.short_description}
-              genre={item.genre}
-              id={item.id}
-            />
+            <Card item={item} description={false} />
             <span className="card-number">{`${index + 1}`}</span>
           </div>
         ))

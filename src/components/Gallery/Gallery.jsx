@@ -8,17 +8,7 @@ const Gallery = ({ newGames }) => {
       <h2>Gallery</h2>
       <section className="galleryContainer">
         {newGames ? (
-          newGames.map((item) => (
-            <Card
-              key={item.id}
-              title={item.title}
-              thumbnail={item.thumbnail}
-              description={false}
-              short_description={item.short_description}
-              genre={item.genre}
-              id={item.id}
-            />
-          ))
+          newGames.map((item) => <Card key={item.id} item={item} />)
         ) : (
           <p>Loading...</p>
         )}
