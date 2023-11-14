@@ -14,6 +14,7 @@ const TopPC = () => {
       "X-RapidAPI-Key": "80caff7fbemshc112244508e4c65p1241abjsnd55fb8f398b4",
       "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
     },
+    mode: "cors",
   };
 
   useEffect(() => {
