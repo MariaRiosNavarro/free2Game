@@ -35,6 +35,10 @@
   fill: white;
 }
 
+.description {
+  padding-bottom: 36px;
+}
+
 /* .badge-img-wrapper img {
   width: auto;
 } */

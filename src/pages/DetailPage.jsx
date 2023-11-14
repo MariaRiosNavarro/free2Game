@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-
 import "./DetailPage.css";
-
 import Button from "../components/Button/Button";
 
 const DetailPage = () => {
