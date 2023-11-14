@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Category.css";
 
-const Category = ({ genres }) => {
+const Category = ({ setGames }) => {
   const [isOpenPlatform, setIsOpenPlatform] = useState(false);
   const [isOpenGenre, setIsOpenGenre] = useState(false);
   const [isOpenSortBy, setIsOpenSortBy] = useState(false);
@@ -15,6 +15,84 @@ const Category = ({ genres }) => {
     genre: [],
     sortBy: [],
   });
+
+  const gameGenres = [
+    "mmorpg",
+    "shooter",
+    "strategy",
+    "moba",
+    "racing",
+    "sports",
+    "social",
+    "sandbox",
+    "open-world",
+    "survival",
+    "pvp",
+    "pve",
+    "pixel",
+    "voxel",
+    "zombie",
+    "turn-based",
+    "first-person",
+    "third-Person",
+    "top-down",
+    "tank",
+    "space",
+    "sailing",
+    "side-scroller",
+    "superhero",
+    "permadeath",
+    "card",
+    "battle-royale",
+    "mmo",
+    "mmofps",
+    "mmotps",
+    "3d",
+    "2d",
+    "anime",
+    "fantasy",
+    "sci-fi",
+    "fighting",
+    "action-rpg",
+    "action",
+    "military",
+    "martial-arts",
+    "flight",
+    "low-spec",
+    "tower-defense",
+    "horror",
+    "mmorts",
+  ];
+
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": "80bad1a5dbmshf2f932854360a23p117e26jsn6a9999a6e64f",
+      "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
+    },
+    mode: "cors",
+  };
+
+  useEffect(() => {
+    fetch(url, options)
+      .then((res) => res.json())
+      .then((data) => setGames(data))
+      .catch((err) => console.error("Yan junge hör auf damit", err));
+  }, [selectedFilters]);
+
+  let url = `https://free-to-play-games-database.p.rapidapi.com/api/games?${
+    selectedFilters.platform.length > 0
+      ? `platform=${selectedFilters.platform.join("&")}`
+      : ""
+  }${
+    selectedFilters.genre.length > 0
+      ? `&category=${selectedFilters.genre.join("&")}`
+      : ""
+  }${
+    selectedFilters.sortBy.length > 0
+      ? `&sort-by=${selectedFilters.sortBy.join("&")}`
+      : ""
+  }`;
 
   const toggleMenuPlatform = () => {
     setIsOpenPlatform(!isOpenPlatform);
@@ -63,22 +141,20 @@ const Category = ({ genres }) => {
             <div>
               <input
                 type="checkbox"
-                value="allPlatforms"
+                value="all"
                 name="allPlatforms"
                 id="allPlatforms"
-                onChange={() =>
-                  handleCheckboxChange("platform", "allPlatforms")
-                }
+                onChange={() => handleCheckboxChange("platform", "all")}
               />
               <label htmlFor="allPlatforms">all Platforms</label>
             </div>
             <div>
               <input
                 type="checkbox"
-                value="windows"
+                value="pc"
                 name="windows"
                 id="windows"
-                onChange={() => handleCheckboxChange("platform", "windows")}
+                onChange={() => handleCheckboxChange("platform", "pc")}
               />
               <label htmlFor="windows">Windows</label>
             </div>
@@ -111,26 +187,18 @@ const Category = ({ genres }) => {
         </div>
         {isOpenGenre && (
           <form action="" className="Form">
-            <div>
-              <input
-                type="checkbox"
-                value="shooter"
-                name="shooter"
-                id="shooter"
-                onChange={() => handleCheckboxChange("genre", "shooter")}
-              />
-              <label htmlFor="shooter">shooter</label>
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                value="sci-fi"
-                name="sci-fi"
-                id="sci-fi"
-                onChange={() => handleCheckboxChange("genre", "sci-fi")}
-              />
-              <label htmlFor="sci-fi">sci-fi</label>
-            </div>
+            {gameGenres.map((genre) => (
+              <div key={genre}>
+                <input
+                  type="checkbox"
+                  value={genre}
+                  name={genre}
+                  id={genre}
+                  onChange={() => handleCheckboxChange("genre", genre)}
+                />
+                <label htmlFor={genre}>{genre}</label>
+              </div>
+            ))}
           </form>
         )}
         <div>
