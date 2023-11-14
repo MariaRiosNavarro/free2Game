@@ -1,8 +1,7 @@
 import TopPC from "../components/TopPC/TopPC";
 import Button from "../components/Button/Button";
 import "./HomePage.css";
-
-import HomeSlider from "../components/HomeSlider/HomeSlider";
+import HomeSlider from "../components/HomeSlider/HomeSlider.jsx";
 
 const HomePage = () => {
   return (
