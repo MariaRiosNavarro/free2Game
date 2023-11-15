@@ -10,17 +10,18 @@ const Card = (props) => {
         <img src={props.item.thumbnail} alt={props.item.title} />
       </div>
       <div className="text-wrapper">
-        <h3 className="title">{props.item.title}</h3>
+
+       <h4 className="title">{props.item.title}</h4>
         {props.description ? (
           <p className="description">{props.item.short_description}</p>
         ) : null}
         <Button href={`/detail/${props.item.id}`} btnName="READ MORE" />
-        <hr className="separation-line" />
+        <div className="separation-line"></div>
         <div className="badge-wrapper">
           <span className="badge badge-img-wrapper">
             {props.item.platform === "Web Browser" ? <BrowserSvg /> : <PCSvg />}
           </span>
-          <span className="badge bagge-genre">{props.item.genre}</span>
+          <p className="badge bagge-genre card-category">{props.item.genre}</p>
         </div>
       </div>
     </article>

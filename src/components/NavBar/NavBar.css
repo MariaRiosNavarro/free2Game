@@ -9,8 +9,8 @@ nav {
   display: flex;
   justify-content: space-between;
   z-index: 1;
-  padding: 2vh 3vw;
-  margin-left: 4vw;
+  padding: 20px 70px;
+  margin-left: 85px;
 }
 
 nav a {
@@ -22,5 +22,5 @@ nav a {
 }
 
 .logo {
-  width: 12vw;
+  width: 220px;
 }

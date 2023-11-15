@@ -130,7 +130,7 @@ const Category = ({ setGames }) => {
     <div className="categoryContainer">
       <div className="custom-dropdown">
         <div
-          className="selected-Platform"
+          className="selected-Platform select"
           onClick={toggleMenuPlatform}
           onBlur={() => setIsOpenPlatform(false)}
         >
@@ -179,7 +179,7 @@ const Category = ({ setGames }) => {
       </div>
       <div className="custom-dropdown">
         <div
-          className="selected-Genre"
+          className="selected-Genre select"
           onClick={toggleMenuGenre}
           onBlur={() => setIsOpenGenre(false)}
         >
@@ -209,7 +209,7 @@ const Category = ({ setGames }) => {
       </div>
       <div className="custom-dropdown">
         <div
-          className="sortBy"
+          className="sortBy select"
           onClick={toggleSortBy}
           onBlur={() => setIsOpenSortBy(false)}
         >

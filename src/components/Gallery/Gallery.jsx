@@ -4,8 +4,7 @@ import { useState, useEffect } from "react";
 
 const Gallery = ({ newGames }) => {
   return (
-    <div>
-      <h2>Gallery</h2>
+    <div className="gallery-wrapper">
       <section className="galleryContainer">
         {newGames ? (
           newGames.map((item) => <Card key={item.id} item={item} />)
