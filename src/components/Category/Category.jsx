@@ -127,141 +127,142 @@ const Category = ({ setGames }) => {
   };
 
   return (
-    <div className="categoryContainer">
-      <div className="custom-dropdown">
-        <div
-          className="selected-Platform select"
-          onClick={toggleMenuPlatform}
-          onBlur={() => setIsOpenPlatform(false)}
-        >
-          {selectedPlatform === "platforms" ? "Platforms" : selectedPlatform}
-        </div>
-        {isOpenPlatform && (
-          <form action="" className="Form">
-            <div>
-              <input
-                type="checkbox"
-                value="all"
-                name="allPlatforms"
-                id="allPlatforms"
-                onChange={() => handleCheckboxChange("platform", "all")}
-              />
-              <label htmlFor="allPlatforms">all Platforms</label>
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                value="pc"
-                name="windows"
-                id="windows"
-                onChange={() => handleCheckboxChange("platform", "pc")}
-              />
-              <label htmlFor="windows">Windows</label>
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                value="browser"
-                name="browser"
-                id="browser"
-                onChange={() => handleCheckboxChange("platform", "browser")}
-              />
-              <label htmlFor="browser">Browser</label>
-            </div>
-          </form>
-        )}
-        <div>
-          {" "}
-          {selectedFilters.platform.length === 0
-            ? "Platforms"
-            : selectedFilters.platform.join(", ")}
-        </div>
-      </div>
-      <div className="custom-dropdown">
-        <div
-          className="selected-Genre select"
-          onClick={toggleMenuGenre}
-          onBlur={() => setIsOpenGenre(false)}
-        >
-          {selectedGenre === "genre" ? "Genre" : selectedGenre}
-        </div>
-        {isOpenGenre && (
-          <form action="" className="Form">
-            {gameGenres.map((genre) => (
-              <div key={genre}>
+    <>
+      <div className="categoryContainer">
+        <div className="custom-dropdown">
+          <div
+            className="selected-Platform select"
+            onClick={toggleMenuPlatform}
+            onBlur={() => setIsOpenPlatform(false)}
+          >
+            {selectedPlatform === "platforms" ? "Platforms" : selectedPlatform}
+          </div>
+          {isOpenPlatform && (
+            <form action="" className="Form">
+              <div>
                 <input
                   type="checkbox"
-                  value={genre}
-                  name={genre}
-                  id={genre}
-                  onChange={() => handleCheckboxChange("genre", genre)}
+                  value="all"
+                  name="allPlatforms"
+                  id="allPlatforms"
+                  checked={selectedFilters.platform.includes("all")}
+                  onChange={() => handleCheckboxChange("platform", "all")}
                 />
-                <label htmlFor={genre}>{genre}</label>
+                <label htmlFor="allPlatforms">all Platforms</label>
               </div>
-            ))}
-          </form>
-        )}
-        <div>
-          {selectedFilters.genre.length === 0
-            ? "Genre"
-            : selectedFilters.genre.join(", ")}
+              <div>
+                <input
+                  type="checkbox"
+                  value="pc"
+                  name="windows"
+                  id="windows"
+                  checked={selectedFilters.platform.includes("pc")}
+                  onChange={() => handleCheckboxChange("platform", "pc")}
+                />
+                <label htmlFor="windows">Windows</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  value="browser"
+                  name="browser"
+                  id="browser"
+                  checked={selectedFilters.platform.includes("browser")}
+                  onChange={() => handleCheckboxChange("platform", "browser")}
+                />
+                <label htmlFor="browser">Browser</label>
+              </div>
+            </form>
+          )}
+        </div>
+        <div className="custom-dropdown">
+          <div
+            className="selected-Genre select"
+            onClick={toggleMenuGenre}
+            onBlur={() => setIsOpenGenre(false)}
+          >
+            {selectedGenre === "genre" ? "Genre" : selectedGenre}
+          </div>
+          {isOpenGenre && (
+            <form action="" className="Form">
+              {gameGenres.map((genre) => (
+                <div key={genre}>
+                  <input
+                    type="checkbox"
+                    value={genre}
+                    name={genre}
+                    id={genre}
+                    checked={selectedFilters.genre.includes(genre)}
+                    onChange={() => handleCheckboxChange("genre", genre)}
+                  />
+                  <label htmlFor={genre}>{genre}</label>
+                </div>
+              ))}
+            </form>
+          )}
+        </div>
+        <div className="custom-dropdown">
+          <div
+            className="sortBy select"
+            onClick={toggleSortBy}
+            onBlur={() => setIsOpenSortBy(false)}
+          >
+            {sortBy === "sortby" ? "SortBy" : sortBy}
+          </div>
+          {isOpenSortBy && (
+            <form action="" className="Form">
+              <div>
+                <input
+                  type="checkbox"
+                  name="relevance"
+                  id="relevance"
+                  checked={selectedFilters.sortBy.includes("relevance")}
+                  onChange={() => handleCheckboxChange("sortBy", "relevance")}
+                />
+                <label htmlFor="relevance">Relevance</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="popularity"
+                  id="popularity"
+                  checked={selectedFilters.sortBy.includes("popularity")}
+                  onChange={() => handleCheckboxChange("sortBy", "popularity")}
+                />
+                <label htmlFor="popularity">Popularity</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="releaseDate"
+                  id="releaseDate"
+                  checked={selectedFilters.sortBy.includes("releaseDate")}
+                  onChange={() => handleCheckboxChange("sortBy", "releaseDate")}
+                />
+                <label htmlFor="releaseDate">Release Date</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="alphabetical"
+                  id="alphabetical"
+                  checked={selectedFilters.sortBy.includes("alphabetical")}
+                  onChange={() =>
+                    handleCheckboxChange("sortBy", "alphabetical")
+                  }
+                />
+                <label htmlFor="alphabetical">Alphabetical</label>
+              </div>
+            </form>
+          )}
         </div>
       </div>
-      <div className="custom-dropdown">
-        <div
-          className="sortBy select"
-          onClick={toggleSortBy}
-          onBlur={() => setIsOpenSortBy(false)}
-        >
-          {sortBy === "sortby" ? "SortBy" : sortBy}
-        </div>
-        {isOpenSortBy && (
-          <form action="" className="Form">
-            <div>
-              <input
-                type="checkbox"
-                name="relevance"
-                id="relevance"
-                onChange={() => handleCheckboxChange("sortBy", "relevance")}
-              />
-              <label htmlFor="relevance">Relevance</label>
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                name="popularity"
-                id="popularity"
-                onChange={() => handleCheckboxChange("sortBy", "popularity")}
-              />
-              <label htmlFor="popularity">Popularity</label>
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                name="releaseDate"
-                id="releaseDate"
-                onChange={() => handleCheckboxChange("sortBy", "releaseDate")}
-              />
-              <label htmlFor="releaseDate">Release Date</label>
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                name="alphabetical"
-                id="alphabetical"
-                onChange={() => handleCheckboxChange("sortBy", "alphabetical")}
-              />
-              <label htmlFor="alphabetical">Alphabetical</label>
-            </div>
-          </form>
-        )}
-        <div>
-          {selectedFilters.sortBy.length === 0
-            ? "SortBy"
-            : selectedFilters.sortBy.join(", ")}
-        </div>
+      <div className="filter-categories">
+        {selectedFilters.platform
+          .concat(selectedFilters.genre.concat(selectedFilters.sortBy))
+          .join(" ")}
       </div>
-    </div>
+    </>
   );
 };
 
