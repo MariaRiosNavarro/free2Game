@@ -1,14 +1,14 @@
 import { useState } from "react";
 import Category from "../components/Category/Category";
 import Gallery from "../components/Gallery/Gallery";
-import HeaderRandomPicture from "../components/HeaderRandomPicture/HeaderRandomPicture";
+import HeaderPicture from "../components/HeaderPicture/HeaderPicture";
 import "./AllGamePage.css";
 const AllGamesPage = ({ newGames }) => {
   const [filteredGames, setGames] = useState(newGames);
 
   return (
     <div className="all-page page-style">
-      <HeaderRandomPicture newGames={newGames} titelPage="All Games" />
+      <HeaderPicture titelPage="All Games" imgSrc="/img/header2.jpeg" />
       <Category setGames={setGames} />
       <Gallery newGames={filteredGames} />
     </div>
