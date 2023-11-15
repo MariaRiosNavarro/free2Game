@@ -31,13 +31,18 @@ nav a {
   nav {
     justify-content: flex-start;
     align-items: center;
-    gap: 2vw;
-    background-color: red;
-    padding: 20px 10px;
+    gap: 5vw;
+
+    padding: 10px 0;
+    margin-left: 55px;
   }
   .logo {
-    width: 100px;
+    width: 70px;
     position: relative;
     left: 0;
+  }
+  .search {
+    width: 250px;
+    padding-left: 7vw;
   }
 }
