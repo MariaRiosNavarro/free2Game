@@ -155,7 +155,7 @@ const Category = ({ setGames }) => {
           </div>
           {isOpenPlatform && (
             <form action="" className="Form">
-              <div>
+              <div className="input-bg">
                 <input
                   type="checkbox"
                   value="all"
@@ -166,7 +166,7 @@ const Category = ({ setGames }) => {
                 />
                 <label htmlFor="allPlatforms">all Platforms</label>
               </div>
-              <div>
+              <div className="input-bg">
                 <input
                   type="checkbox"
                   value="pc"
@@ -177,7 +177,7 @@ const Category = ({ setGames }) => {
                 />
                 <label htmlFor="windows">Windows</label>
               </div>
-              <div>
+              <div className="input-bg">
                 <input
                   type="checkbox"
                   value="browser"
@@ -202,7 +202,7 @@ const Category = ({ setGames }) => {
           {isOpenGenre && (
             <form action="" className="Form">
               {gameGenres.map((genre) => (
-                <div key={genre}>
+                <div key={genre} className="input-bg">
                   <input
                     type="checkbox"
                     value={genre}
@@ -227,7 +227,7 @@ const Category = ({ setGames }) => {
           </div>
           {isOpenSortBy && (
             <form action="" className="Form">
-              <div>
+              <div className="input-bg">
                 <input
                   type="checkbox"
                   name="relevance"
@@ -237,7 +237,7 @@ const Category = ({ setGames }) => {
                 />
                 <label htmlFor="relevance">Relevance</label>
               </div>
-              <div>
+              <div className="input-bg">
                 <input
                   type="checkbox"
                   name="popularity"
@@ -247,7 +247,7 @@ const Category = ({ setGames }) => {
                 />
                 <label htmlFor="popularity">Popularity</label>
               </div>
-              <div>
+              <div className="input-bg">
                 <input
                   type="checkbox"
                   name="releaseDate"
@@ -257,7 +257,7 @@ const Category = ({ setGames }) => {
                 />
                 <label htmlFor="releaseDate">Release Date</label>
               </div>
-              <div>
+              <div className="input-bg">
                 <input
                   type="checkbox"
                   name="alphabetical"
