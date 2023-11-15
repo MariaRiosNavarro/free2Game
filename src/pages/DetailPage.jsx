@@ -33,7 +33,7 @@ const DetailPage = () => {
     <section className="detail-page">
       <div className="big-image">
         {game.screenshots?.map((item, index) =>
-          index === 2 ? (
+          index === 0 ? (
             <img
               key={item.id}
               src={item.image}
@@ -61,7 +61,7 @@ const DetailPage = () => {
 
       <div className="detail-2col">
         {game.screenshots?.map((item, index) =>
-          index <= 1 ? (
+          index > 0 && index < 3 ? (
             <img
               key={item.id}
               src={item.image}
