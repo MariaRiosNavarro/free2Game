@@ -14,7 +14,7 @@ const HomePage = ({ newGames }) => {
       <div className="home-wrapper">
         <div className="container-home">
           <h3>Recently Added</h3>
-          <HomeSlider apiUrlEnd="sort-by=popularity" description={true} />
+          <HomeSlider apiUrlEnd="sort-by=release-date" description={true} />
           <div className="show-more">
             <Button href="/allgames" btnName="SHOW MORE" />
           </div>
@@ -31,7 +31,7 @@ const HomePage = ({ newGames }) => {
         <div className="container-home">
           <h3>Top 4 Games for Browser in November 2023</h3>
           <HomeSlider
-            apiUrlEnd="platform=browser&sort-by=release-date"
+            apiUrlEnd="platform=browser&sort-by=relevance"
             description={false}
           />
           <div className="show-more">

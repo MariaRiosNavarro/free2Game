@@ -6,7 +6,7 @@ const TopPC = () => {
   const [topPCGames, setToptPCGames] = useState([]);
 
   const url =
-    "https://free-to-play-games-database.p.rapidapi.com/api/games?platform=pc&sort-by=release-date";
+    "https://free-to-play-games-database.p.rapidapi.com/api/games?platform=pc&sort-by=relevance";
 
   const options = {
     method: "GET",
