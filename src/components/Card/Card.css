@@ -61,8 +61,13 @@
 } */
 
 .description {
-  padding-bottom: 36px;
   height: 100px;
+  overflow: hidden;
+  white-space: normal; /* Erlaube Umbruch von Text auf neue Zeilen */
+  line-height: 1.5em;
+  text-overflow: ellipsis;
+
+  margin-bottom: 3vh;
 }
 
 /* .badge-img-wrapper img {
