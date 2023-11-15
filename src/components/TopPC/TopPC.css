@@ -175,6 +175,25 @@
     height: auto;
     width: auto;
   }
+  .card-wrapper-1 .card-number {
+    left: 24px;
+    top: 24px;
+  }
+
+  .card-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid #ff4654;
+    background-color: #040f14;
+    width: 35px;
+    height: 35px;
+    color: white;
+    font-size: 18px;
+    z-index: 5;
+    font-family: oswald;
+  }
   /* - */
 }
 
