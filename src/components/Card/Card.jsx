@@ -10,8 +10,7 @@ const Card = (props) => {
         <img src={props.item.thumbnail} alt={props.item.title} />
       </div>
       <div className="text-wrapper">
-
-       <h4 className="title">{props.item.title}</h4>
+        <h4 className="title">{props.item.title}</h4>
         {props.description ? (
           <p className="description">{props.item.short_description}</p>
         ) : null}
