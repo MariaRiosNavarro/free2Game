@@ -102,3 +102,8 @@ aside .asideIcon p {
   background-color: #040f14;
   border: 1.5px solid #ff4654;
 } */
+
+/* !Mobile Version */
+
+@media only screen and (max-width: 600px) {
+}

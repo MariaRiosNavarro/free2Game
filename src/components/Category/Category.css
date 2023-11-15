@@ -13,6 +13,8 @@
   background-color: #102130;
   border-radius: 20px;
   padding: 20px;
+  max-height: 22vh;
+  overflow-y: auto;
 }
 
 .Form input {
