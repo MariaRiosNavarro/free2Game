@@ -27,7 +27,7 @@ const DetailPage = () => {
         console.error("Game Over: Try Again with your Fetch:", error);
       });
   }, []);
-  console.log(game);
+  // console.log(game);
 
   return (
     <section className="detail-page page-style">
