@@ -31,12 +31,13 @@
   align-items: center;
 }
 
-.badge-img-wrapper svg {
+/* .badge-img-wrapper svg {
   fill: white;
-}
+} */
 
 .description {
   padding-bottom: 36px;
+  height: 100px;
 }
 
 /* .badge-img-wrapper img {
