@@ -9,7 +9,7 @@ const HomePage = ({ newGames }) => {
     <div className="home-page page-style">
       <HeaderPicture
         titelPage="Find & track the best free-to-play games!"
-        imgSrc="/public/img/header1.jpeg"
+        imgSrc="/img/header1.jpeg"
       />
       <div className="home-wrapper">
         <div className="container-home">
