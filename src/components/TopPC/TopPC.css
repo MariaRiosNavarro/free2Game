@@ -64,8 +64,6 @@
   left: 36px;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
   bottom: 195px;
 }
 
@@ -73,9 +71,8 @@
   font-size: 48px;
 }
 
-.card-wrapper-1 .card .badge-wrapper .badge-img-wrapper img {
-  z-index: 5;
-  background-color: #ff4654;
+.platform-img {
+  fill: white;
 }
 
 .card-wrapper-1 .card-number {
