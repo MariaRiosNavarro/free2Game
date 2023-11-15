@@ -75,3 +75,27 @@
 /* .badge-img-wrapper img {
   width: auto;
 } */
+
+@media only screen and (max-width: 600px) {
+  .card {
+    height: 60vh;
+    width: 100%;
+    align-items: center;
+  }
+
+  .card .img-wrapper {
+    height: 40%;
+  }
+
+  .card .text-wrapper {
+    height: 60%;
+  }
+
+  .text-wrapper {
+    padding: 0 4vw;
+  }
+  .description {
+    height: 50px;
+    width: 80%;
+  }
+}
