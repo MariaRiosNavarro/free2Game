@@ -1,9 +1,9 @@
 .card {
   border-radius: 20px;
   background: #102130;
-
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .img-wrapper {
@@ -15,6 +15,8 @@
 .img-wrapper img {
   max-width: 100%;
   object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 
 .text-wrapper {
