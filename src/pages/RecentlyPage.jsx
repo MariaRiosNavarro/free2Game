@@ -17,7 +17,7 @@ const RecentlyPage = ({ newGames }) => {
     <div className="page-style">
       <HeaderRandomPicture
         titelPage="Recently Add"
-        imgSrc="/public/img/header3.jpeg"
+        imgSrc="/img/header3.jpeg"
       />
       <Gallery newGames={copyArray} />
     </div>

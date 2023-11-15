@@ -8,7 +8,7 @@ const AllGamesPage = ({ newGames }) => {
 
   return (
     <div className="all-page page-style">
-      <HeaderPicture titelPage="All Games" imgSrc="/public/img/header2.jpeg" />
+      <HeaderPicture titelPage="All Games" imgSrc="/img/header2.jpeg" />
       <Category setGames={setGames} />
       <Gallery newGames={filteredGames} />
     </div>
