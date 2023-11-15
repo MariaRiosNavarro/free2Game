@@ -1,14 +1,13 @@
 /* Esto de abajo no funciona */
 
 input[name="hidden-scroll"] {
-  display: none;
+  display: none !important;
 }
 
 input[name="hidden-scroll"] + label {
   position: relative;
   padding-left: 0;
   cursor: pointer;
-  display: none; /* Aquí ocultamos el label */
 }
 
 input[name="hidden-scroll"] + label:before {
@@ -16,18 +15,18 @@ input[name="hidden-scroll"] + label:before {
   position: absolute;
   left: 0;
   top: 0;
-  border: none;
-  background-color: transparent;
-  margin-top: 0;
+  border: none !important;
+  background-color: transparent !important;
+  margin-top: 0 !important;
 }
-
+/*
 input[name="hidden-scroll"]:checked + label:before {
-  background-color: transparent;
+  background-color: transparent !important;
   content: "";
-  border: none;
-  color: transparent;
-  margin: 0;
-}
+  border: none !important;
+  color: transparent !important;
+  margin: 0 !important;
+} */
 
 /* Esto de abajo si funciona  */
 .scroll-wrapper .scroll-to-btn {
@@ -74,4 +73,23 @@ input[name="hidden-scroll"]:checked + label:before {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* !Mobile Version */
+
+@media only screen and (max-width: 600px) {
+  .scroll-wrapper .scroll-to-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    top: 95vh;
+  }
+
+  .scroll-wrapper .left {
+    left: 0.5rem;
+  }
+  .scroll-wrapper .right {
+    right: 0.5rem;
+  }
 }

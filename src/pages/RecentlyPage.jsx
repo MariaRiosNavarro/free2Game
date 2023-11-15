@@ -27,8 +27,11 @@ const RecentlyPage = ({ newGames }) => {
         imgSrc="/img/header3.jpeg"
       />
       {loading ? (
-        <div style={{ width: "fit-content", margin: "0 auto" }}>
-          <img src={Shiggy} alt="" />
+        <div
+          className="shiggy-wrapper"
+          style={{ width: "fit-content", margin: "0 auto" }}
+        >
+          <img className="shiggy-img" src={Shiggy} alt="" />
         </div>
       ) : (
         <>

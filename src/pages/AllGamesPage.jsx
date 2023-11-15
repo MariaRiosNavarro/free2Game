@@ -20,8 +20,11 @@ const AllGamesPage = ({ newGames }) => {
       <HeaderPicture titelPage="All Games" imgSrc="/img/header2.jpeg" />
 
       {loading ? (
-        <div style={{ width: "fit-content", margin: "0 auto" }}>
-          <img src={Shiggy} alt="" />
+        <div
+          className="shiggy-wrapper"
+          style={{ width: "fit-content", margin: "0 auto" }}
+        >
+          <img className="shiggy-img" src={Shiggy} alt="" />
         </div>
       ) : (
         <>

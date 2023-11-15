@@ -3,6 +3,7 @@ import Button from "../components/Button/Button";
 import "./HomePage.css";
 import HomeSlider from "../components/HomeSlider/HomeSlider.jsx";
 import HeaderPicture from "../components/HeaderPicture/HeaderPicture.jsx";
+import ScrollTo from "../components/SchrollTo/ScrollTo.jsx";
 
 const HomePage = ({ newGames }) => {
   return (
@@ -12,6 +13,7 @@ const HomePage = ({ newGames }) => {
         imgSrc="/img/header1.jpeg"
       />
       <div className="home-wrapper">
+        <ScrollTo top={false} />
         <div className="container-home">
           <h3>Recently Added</h3>
           <HomeSlider apiUrlEnd="sort-by=release-date" description={true} />
@@ -38,6 +40,7 @@ const HomePage = ({ newGames }) => {
             <Button href="/allgames" btnName="SHOW MORE" />
           </div>
         </div>
+        <ScrollTo top={true} />
       </div>
     </div>
   );

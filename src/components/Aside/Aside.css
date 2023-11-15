@@ -112,6 +112,11 @@ aside .asideIcon p {
     overflow: hidden;
     border-right: none;
     background-color: transparent;
+    background: linear-gradient(
+      to bottom,
+      rgba(4, 15, 20, 1) 0%,
+      rgba(4, 15, 20, 0) 100%
+    );
   }
 
   aside img {

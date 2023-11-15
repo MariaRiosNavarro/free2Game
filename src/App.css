@@ -128,4 +128,15 @@ img {
   .btn {
     padding: 9px 15px;
   }
+
+  .shiggy-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+  }
+  .shiggy-img {
+    margin: 0 auto;
+    padding-left: 2rem;
+    width: 100%;
+  }
 }
