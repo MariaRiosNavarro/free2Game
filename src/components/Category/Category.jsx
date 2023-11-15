@@ -126,6 +126,22 @@ const Category = ({ setGames }) => {
     console.log("Selected Filters:", selectedFilters);
   };
 
+  const removeFilter = (category, value) => {
+    // Kopiere das aktuelle ausgewählte Filterset
+    const newSelectedFilters = { ...selectedFilters };
+
+    // Überprüfe, ob der Wert ausgewählt ist
+    const index = newSelectedFilters[category].indexOf(value);
+
+    if (index !== -1) {
+      // Wenn ausgewählt, entferne den Wert
+      newSelectedFilters[category].splice(index, 1);
+
+      // Aktualisiere den Zustand mit den neuen ausgewählten Filtern
+      setSelectedFilters(newSelectedFilters);
+    }
+  };
+
   return (
     <>
       <div className="categoryContainer">
@@ -258,9 +274,39 @@ const Category = ({ setGames }) => {
         </div>
       </div>
       <div className="filter-categories">
-        {selectedFilters.platform
-          .concat(selectedFilters.genre.concat(selectedFilters.sortBy))
-          .join(" ")}
+        {selectedFilters.platform.map((filter) => (
+          <span key={filter} className="filter">
+            <button
+              className="remove-filter"
+              onClick={() => removeFilter("platform", filter)}
+            >
+              X
+            </button>
+            {filter}
+          </span>
+        ))}
+        {selectedFilters.genre.map((filter) => (
+          <span key={filter} className="filter">
+            <button
+              className="remove-filter"
+              onClick={() => removeFilter("genre", filter)}
+            >
+              X
+            </button>
+            {filter}
+          </span>
+        ))}
+        {selectedFilters.sortBy.map((filter) => (
+          <span key={filter} className="filter">
+            <button
+              className="remove-filter"
+              onClick={() => removeFilter("sortBy", filter)}
+            >
+              X
+            </button>
+            {filter}
+          </span>
+        ))}
       </div>
     </>
   );
