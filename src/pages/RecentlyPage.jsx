@@ -1,6 +1,8 @@
 import Category from "../components/Category/Category";
 import Gallery from "../components/Gallery/Gallery";
 import HeaderRandomPicture from "../components/HeaderPicture/HeaderPicture";
+import Shiggy from "../assets/img/shiggy.gif";
+import { useState } from "react";
 
 const RecentlyPage = ({ newGames }) => {
   const copyArray = [...newGames];
@@ -11,7 +13,11 @@ const RecentlyPage = ({ newGames }) => {
     return dateB - dateA;
   });
 
-  console.log(copyArray);
+  const [loading, setLoading] = useState(true);
+
+  setTimeout(() => {
+    setLoading(false);
+  }, 2000);
 
   return (
     <div className="page-style">
@@ -19,7 +25,15 @@ const RecentlyPage = ({ newGames }) => {
         titelPage="Recently Add"
         imgSrc="/img/header3.jpeg"
       />
-      <Gallery newGames={copyArray} />
+      {loading ? (
+        <div style={{ width: "fit-content", margin: "0 auto" }}>
+          <img src={Shiggy} alt="" />
+        </div>
+      ) : (
+        <>
+          <Gallery newGames={copyArray} />
+        </>
+      )}
     </div>
   );
 };
