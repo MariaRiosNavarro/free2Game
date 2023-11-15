@@ -14,7 +14,7 @@ const RecentlyPage = ({ newGames }) => {
   console.log(copyArray);
 
   return (
-    <div>
+    <div className="page-style">
       <HeaderRandomPicture newGames={newGames} titelPage="Recently Add" />
       <Gallery newGames={copyArray} />
     </div>
