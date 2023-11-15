@@ -11,7 +11,7 @@ const AllGamesPage = ({ newGames }) => {
 
   setTimeout(() => {
     setLoading(false);
-  }, 2000);
+  }, 1800);
 
   return (
     <div className="all-page page-style">
