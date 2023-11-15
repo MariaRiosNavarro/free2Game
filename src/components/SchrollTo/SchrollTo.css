@@ -1,9 +1,35 @@
+/* Esto de abajo no funciona */
+
+input[name="hidden-scroll"] {
+  display: none;
+}
+
+input[name="hidden-scroll"] + label {
+  position: relative;
+  padding-left: 0;
+  cursor: pointer;
+  display: none; /* Aquí ocultamos el label */
+}
+
+input[name="hidden-scroll"] + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: none;
+  background-color: transparent;
+  margin-top: 0;
+}
+
 input[name="hidden-scroll"]:checked + label:before {
   background-color: transparent;
   content: "";
   border: none;
+  color: transparent;
+  margin: 0;
 }
 
+/* Esto de abajo si funciona  */
 .scroll-wrapper .scroll-to-btn {
   position: fixed;
   height: 100%;
