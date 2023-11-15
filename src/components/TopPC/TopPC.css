@@ -3,15 +3,16 @@
 .top-pc-wrapper {
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 493px 697px;
-  grid-template-rows: 263px 263px 263px;
+  grid-template-columns: 30vw 40vw;
+  grid-template-rows: 29vh 29vh 29vh;
   grid-template-areas:
     "game1 game2"
     "game1 game3"
     "game1 game4";
-  gap: 24px;
+  gap: 0vh 2vw;
   max-width: 100vw;
   margin: 0 auto;
+  margin-bottom: 5vh;
 }
 
 .card-wrapper {
@@ -37,6 +38,7 @@
   color: white;
   font-size: 24px;
   z-index: 5;
+  font-family: oswald;
 }
 
 /* !Erste Karte */
@@ -51,7 +53,7 @@
 }
 
 .card-wrapper-1 .card img {
-  height: 837px;
+  height: 82vh;
   width: 100%;
   object-fit: cover;
   border-radius: 24px;
@@ -62,8 +64,6 @@
   left: 36px;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
   bottom: 195px;
 }
 
@@ -71,9 +71,8 @@
   font-size: 48px;
 }
 
-.card-wrapper-1 .card .badge-wrapper .badge-img-wrapper img {
-  z-index: 5;
-  background-color: #ff4654;
+.platform-img {
+  fill: white;
 }
 
 .card-wrapper-1 .card-number {
@@ -103,11 +102,11 @@
   flex-direction: row;
 }
 
-.card-wrapper-2 .card .img-wrapper,
+/* .card-wrapper-2 .card .img-wrapper,
 .card-wrapper-3 .card .img-wrapper,
 .card-wrapper-4 .card .img-wrapper {
   width: 388px;
-}
+} */
 
 .card-wrapper-2 .card-number,
 .card-wrapper-3 .card-number,

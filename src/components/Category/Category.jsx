@@ -1,9 +1,266 @@
+import React, { useEffect, useState } from "react";
 import "./Category.css";
 
-const Category = () => {
+const Category = ({ setGames }) => {
+  const [isOpenPlatform, setIsOpenPlatform] = useState(false);
+  const [isOpenGenre, setIsOpenGenre] = useState(false);
+  const [isOpenSortBy, setIsOpenSortBy] = useState(false);
+  const [selectedPlatform, setSelectedPlatform] = useState("PLATFORM");
+  const [selectedGenre, setSelectedGenre] = useState("GENRE/TAG");
+  const [sortBy, setSortBy] = useState("SORT BY");
+
+  // Zustand, um die ausgewählten Optionen zu speichern
+  const [selectedFilters, setSelectedFilters] = useState({
+    platform: [],
+    genre: [],
+    sortBy: [],
+  });
+
+  const gameGenres = [
+    "mmorpg",
+    "shooter",
+    "strategy",
+    "moba",
+    "racing",
+    "sports",
+    "social",
+    "sandbox",
+    "open-world",
+    "survival",
+    "pvp",
+    "pve",
+    "pixel",
+    "voxel",
+    "zombie",
+    "turn-based",
+    "first-person",
+    "third-Person",
+    "top-down",
+    "tank",
+    "space",
+    "sailing",
+    "side-scroller",
+    "superhero",
+    "permadeath",
+    "card",
+    "battle-royale",
+    "mmo",
+    "mmofps",
+    "mmotps",
+    "3d",
+    "2d",
+    "anime",
+    "fantasy",
+    "sci-fi",
+    "fighting",
+    "action-rpg",
+    "action",
+    "military",
+    "martial-arts",
+    "flight",
+    "low-spec",
+    "tower-defense",
+    "horror",
+    "mmorts",
+  ];
+
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": "80bad1a5dbmshf2f932854360a23p117e26jsn6a9999a6e64f",
+      "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
+    },
+    mode: "cors",
+  };
+
+  useEffect(() => {
+    fetch(url, options)
+      .then((res) => res.json())
+      .then((data) => setGames(data))
+      .catch((err) => console.error("Yan junge hör auf damit", err));
+  }, [selectedFilters]);
+
+  let url = `https://free-to-play-games-database.p.rapidapi.com/api/games?${
+    selectedFilters.platform.length > 0
+      ? `platform=${selectedFilters.platform.join("&")}`
+      : ""
+  }${
+    selectedFilters.genre.length > 0
+      ? `&category=${selectedFilters.genre.join("&")}`
+      : ""
+  }${
+    selectedFilters.sortBy.length > 0
+      ? `&sort-by=${selectedFilters.sortBy.join("&")}`
+      : ""
+  }`;
+
+  const toggleMenuPlatform = () => {
+    setIsOpenPlatform(!isOpenPlatform);
+  };
+
+  const toggleMenuGenre = () => {
+    setIsOpenGenre(!isOpenGenre);
+  };
+
+  const toggleSortBy = () => {
+    setIsOpenSortBy(!isOpenSortBy);
+  };
+
+  const handleCheckboxChange = (category, value) => {
+    // Kopiere das aktuelle ausgewählte Filterset
+    const newSelectedFilters = { ...selectedFilters };
+
+    // Überprüfe, ob der Wert bereits ausgewählt ist
+    const index = newSelectedFilters[category].indexOf(value);
+
+    if (index !== -1) {
+      // Wenn ausgewählt, entferne den Wert
+      newSelectedFilters[category].splice(index, 1);
+    } else {
+      // Wenn nicht ausgewählt, füge den Wert hinzu
+      newSelectedFilters[category].push(value);
+    }
+
+    // Aktualisiere den Zustand mit den neuen ausgewählten Filtern
+    setSelectedFilters(newSelectedFilters);
+    console.log("Selected Filters:", selectedFilters);
+  };
+
   return (
-    <div>
-      <h2>Category</h2>
+    <div className="categoryContainer">
+      <div className="custom-dropdown">
+        <div
+          className="selected-Platform select"
+          onClick={toggleMenuPlatform}
+          onBlur={() => setIsOpenPlatform(false)}
+        >
+          {selectedPlatform === "platforms" ? "Platforms" : selectedPlatform}
+        </div>
+        {isOpenPlatform && (
+          <form action="" className="Form">
+            <div>
+              <input
+                type="checkbox"
+                value="all"
+                name="allPlatforms"
+                id="allPlatforms"
+                onChange={() => handleCheckboxChange("platform", "all")}
+              />
+              <label htmlFor="allPlatforms">all Platforms</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                value="pc"
+                name="windows"
+                id="windows"
+                onChange={() => handleCheckboxChange("platform", "pc")}
+              />
+              <label htmlFor="windows">Windows</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                value="browser"
+                name="browser"
+                id="browser"
+                onChange={() => handleCheckboxChange("platform", "browser")}
+              />
+              <label htmlFor="browser">Browser</label>
+            </div>
+          </form>
+        )}
+        <div>
+          {" "}
+          {selectedFilters.platform.length === 0
+            ? "Platforms"
+            : selectedFilters.platform.join(", ")}
+        </div>
+      </div>
+      <div className="custom-dropdown">
+        <div
+          className="selected-Genre select"
+          onClick={toggleMenuGenre}
+          onBlur={() => setIsOpenGenre(false)}
+        >
+          {selectedGenre === "genre" ? "Genre" : selectedGenre}
+        </div>
+        {isOpenGenre && (
+          <form action="" className="Form">
+            {gameGenres.map((genre) => (
+              <div key={genre}>
+                <input
+                  type="checkbox"
+                  value={genre}
+                  name={genre}
+                  id={genre}
+                  onChange={() => handleCheckboxChange("genre", genre)}
+                />
+                <label htmlFor={genre}>{genre}</label>
+              </div>
+            ))}
+          </form>
+        )}
+        <div>
+          {selectedFilters.genre.length === 0
+            ? "Genre"
+            : selectedFilters.genre.join(", ")}
+        </div>
+      </div>
+      <div className="custom-dropdown">
+        <div
+          className="sortBy select"
+          onClick={toggleSortBy}
+          onBlur={() => setIsOpenSortBy(false)}
+        >
+          {sortBy === "sortby" ? "SortBy" : sortBy}
+        </div>
+        {isOpenSortBy && (
+          <form action="" className="Form">
+            <div>
+              <input
+                type="checkbox"
+                name="relevance"
+                id="relevance"
+                onChange={() => handleCheckboxChange("sortBy", "relevance")}
+              />
+              <label htmlFor="relevance">Relevance</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="popularity"
+                id="popularity"
+                onChange={() => handleCheckboxChange("sortBy", "popularity")}
+              />
+              <label htmlFor="popularity">Popularity</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="releaseDate"
+                id="releaseDate"
+                onChange={() => handleCheckboxChange("sortBy", "releaseDate")}
+              />
+              <label htmlFor="releaseDate">Release Date</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="alphabetical"
+                id="alphabetical"
+                onChange={() => handleCheckboxChange("sortBy", "alphabetical")}
+              />
+              <label htmlFor="alphabetical">Alphabetical</label>
+            </div>
+          </form>
+        )}
+        <div>
+          {selectedFilters.sortBy.length === 0
+            ? "SortBy"
+            : selectedFilters.sortBy.join(", ")}
+        </div>
+      </div>
     </div>
   );
 };

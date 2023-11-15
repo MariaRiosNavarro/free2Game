@@ -1,0 +1,16 @@
+.galleryContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+.gallery-wrapper {
+  width: 72vw;
+  margin-left: 10vw;
+}
+
+.gallery-wrapper h2 {
+  margin-bottom: 4vh;
+}

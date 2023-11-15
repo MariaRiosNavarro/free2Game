@@ -15,6 +15,7 @@ const HomeSlider = ({ apiUrlEnd, description }) => {
       "X-RapidAPI-Key": "80caff7fbemshc112244508e4c65p1241abjsnd55fb8f398b4",
       "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
     },
+    mode: "cors",
   };
 
   useEffect(() => {
@@ -30,8 +31,18 @@ const HomeSlider = ({ apiUrlEnd, description }) => {
   );
 
   const handleShowMoreClick = () => {
-    setStartIndex(startIndex + 1);
+    if (startIndex < 15) {
+      setStartIndex(startIndex + 1);
+    }
   };
+
+  const handleShowLessClick = () => {
+    if (startIndex >= 1) {
+      setStartIndex(startIndex - 1);
+    }
+  };
+
+  handleShowLessClick;
 
   //   useEffect(() => {
   //     let intervalId;
@@ -63,22 +74,16 @@ const HomeSlider = ({ apiUrlEnd, description }) => {
   return (
     <section className="slider-wrapper">
       {/*onMouseEnter={handleHoverIncrement} */}
+      <button className="slider-button one" onClick={handleShowLessClick}>
+        ◀︎
+      </button>
       <div className="slider-content">
         {visibleGamesSubset.map((item) => (
-          <Card
-            key={item.id}
-            title={item.title}
-            thumbnail={item.thumbnail}
-            description={description}
-            short_description={item.short_description}
-            platform={item.platform}
-            genre={item.genre}
-            id={item.id}
-          />
+          <Card key={item.id} description={description} item={item} />
         ))}
       </div>
-      <button className="slider-button" onClick={handleShowMoreClick}>
-        ✚
+      <button className="slider-button two" onClick={handleShowMoreClick}>
+        ►
       </button>
     </section>
   );

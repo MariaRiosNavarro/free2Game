@@ -14,6 +14,7 @@ const TopPC = () => {
       "X-RapidAPI-Key": "80caff7fbemshc112244508e4c65p1241abjsnd55fb8f398b4",
       "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
     },
+    mode: "cors",
   };
 
   useEffect(() => {
@@ -23,8 +24,6 @@ const TopPC = () => {
       .catch((err) => console.error("Fetch Isue", err));
   }, []);
 
-  console.log("hey");
-
   return (
     <section className="top-pc-wrapper">
       {topPCGames ? (
@@ -33,14 +32,7 @@ const TopPC = () => {
             className={`card-wrapper card-wrapper-${index + 1}`}
             key={item.id}
           >
-            <Card
-              title={item.title}
-              thumbnail={item.thumbnail}
-              description={false}
-              short_description={item.short_description}
-              genre={item.genre}
-              id={item.id}
-            />
+            <Card item={item} description={false} />
             <span className="card-number">{`${index + 1}`}</span>
           </div>
         ))
