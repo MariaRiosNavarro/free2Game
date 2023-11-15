@@ -114,3 +114,13 @@ img {
   background-color: #040f14;
   color: white;
 }
+
+@media only screen and (max-width: 600px) {
+  .page-style {
+    padding: 9vh auto 1vh auto;
+  }
+
+  .big-image {
+    height: 40vh;
+  }
+}
