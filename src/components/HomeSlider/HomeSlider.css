@@ -50,3 +50,15 @@
   border: none;
   width: 6vw;
 }
+
+/* !Mobile Version */
+
+@media only screen and (max-width: 600px) {
+  .slider-content {
+    flex-direction: column;
+  }
+
+  .slider-content .card {
+    width: 100%;
+  }
+}
