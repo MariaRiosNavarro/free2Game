@@ -2,8 +2,6 @@ import "./Card.css";
 import Button from "../Button/Button";
 import Pc from "../../assets/img/PC.svg";
 import Browser from "../../assets/img/Browser.svg";
-import PCSvg from "../PCSvg/PCSvg";
-import BrowserSvg from "../BrowserSVG/BrowserSvg";
 
 const Card = (props) => {
   return (
