@@ -2,14 +2,14 @@ import TopPC from "../components/TopPC/TopPC";
 import Button from "../components/Button/Button";
 import "./HomePage.css";
 import HomeSlider from "../components/HomeSlider/HomeSlider.jsx";
-import HeaderRandomPicture from "../components/HeaderRandomPicture/HeaderRandomPicture.jsx";
+import HeaderPicture from "../components/HeaderPicture/HeaderPicture.jsx";
 
 const HomePage = ({ newGames }) => {
   return (
     <div className="home-page page-style">
-      <HeaderRandomPicture
-        newGames={newGames}
+      <HeaderPicture
         titelPage="Find & track the best free-to-play games!"
+        imgSrc="/public/img/header1.jpeg"
       />
       <div className="home-wrapper">
         <div className="container-home">

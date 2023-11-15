@@ -1,6 +1,6 @@
 import Category from "../components/Category/Category";
 import Gallery from "../components/Gallery/Gallery";
-import HeaderRandomPicture from "../components/HeaderRandomPicture/HeaderRandomPicture";
+import HeaderRandomPicture from "../components/HeaderPicture/HeaderPicture";
 
 const RecentlyPage = ({ newGames }) => {
   const copyArray = [...newGames];
@@ -15,7 +15,10 @@ const RecentlyPage = ({ newGames }) => {
 
   return (
     <div className="page-style">
-      <HeaderRandomPicture newGames={newGames} titelPage="Recently Add" />
+      <HeaderRandomPicture
+        titelPage="Recently Add"
+        imgSrc="/public/img/header3.jpeg"
+      />
       <Gallery newGames={copyArray} />
     </div>
   );
