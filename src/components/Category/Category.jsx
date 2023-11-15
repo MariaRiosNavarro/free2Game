@@ -144,6 +144,7 @@ const Category = ({ setGames }) => {
                 value="all"
                 name="allPlatforms"
                 id="allPlatforms"
+                checked={selectedFilters.platform.includes("all")}
                 onChange={() => handleCheckboxChange("platform", "all")}
               />
               <label htmlFor="allPlatforms">all Platforms</label>
@@ -154,6 +155,7 @@ const Category = ({ setGames }) => {
                 value="pc"
                 name="windows"
                 id="windows"
+                checked={selectedFilters.platform.includes("pc")}
                 onChange={() => handleCheckboxChange("platform", "pc")}
               />
               <label htmlFor="windows">Windows</label>
@@ -164,6 +166,7 @@ const Category = ({ setGames }) => {
                 value="browser"
                 name="browser"
                 id="browser"
+                checked={selectedFilters.platform.includes("browser")}
                 onChange={() => handleCheckboxChange("platform", "browser")}
               />
               <label htmlFor="browser">Browser</label>
@@ -194,6 +197,7 @@ const Category = ({ setGames }) => {
                   value={genre}
                   name={genre}
                   id={genre}
+                  checked={selectedFilters.genre.includes(genre)}
                   onChange={() => handleCheckboxChange("genre", genre)}
                 />
                 <label htmlFor={genre}>{genre}</label>
