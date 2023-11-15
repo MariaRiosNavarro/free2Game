@@ -123,7 +123,7 @@ const Category = ({ setGames }) => {
 
     // Aktualisiere den Zustand mit den neuen ausgewählten Filtern
     setSelectedFilters(newSelectedFilters);
-    console.log("Selected Filters:", selectedFilters);
+    //  ! console.log("Selected Filters:", selectedFilters);
   };
 
   const removeFilter = (category, value) => {
@@ -274,37 +274,38 @@ const Category = ({ setGames }) => {
         </div>
       </div>
       <div className="filter-categories">
-        {selectedFilters.platform.map((filter) => (
-          <span key={filter} className="filter">
+        {selectedFilters.platform.map((filter, index) => (
+          <span key={index} className="filter">
             <button
               className="remove-filter"
               onClick={() => removeFilter("platform", filter)}
             >
               X
             </button>
-            {filter}
+
+            {(filter = filter[0].toUpperCase() + filter.slice(1))}
           </span>
         ))}
-        {selectedFilters.genre.map((filter) => (
-          <span key={filter} className="filter">
+        {selectedFilters.genre.map((filter, index) => (
+          <span key={index} className="filter">
             <button
               className="remove-filter"
               onClick={() => removeFilter("genre", filter)}
             >
               X
             </button>
-            {filter}
+            {(filter = filter[0].toUpperCase() + filter.slice(1))}
           </span>
         ))}
-        {selectedFilters.sortBy.map((filter) => (
-          <span key={filter} className="filter">
+        {selectedFilters.sortBy.map((filter, index) => (
+          <span key={index} className="filter">
             <button
               className="remove-filter"
               onClick={() => removeFilter("sortBy", filter)}
             >
               X
             </button>
-            {filter}
+            {(filter = filter[0].toUpperCase() + filter.slice(1))}
           </span>
         ))}
       </div>
