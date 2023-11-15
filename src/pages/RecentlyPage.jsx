@@ -3,6 +3,7 @@ import Gallery from "../components/Gallery/Gallery";
 import HeaderRandomPicture from "../components/HeaderPicture/HeaderPicture";
 import Shiggy from "../assets/img/shiggy.gif";
 import { useState } from "react";
+import ScrollTo from "../components/SchrollTo/ScrollTo";
 
 const RecentlyPage = ({ newGames }) => {
   const copyArray = [...newGames];
@@ -31,7 +32,9 @@ const RecentlyPage = ({ newGames }) => {
         </div>
       ) : (
         <>
+          <ScrollTo top={false} />
           <Gallery newGames={copyArray} />
+          <ScrollTo top={true} />
         </>
       )}
     </div>
