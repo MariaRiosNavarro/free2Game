@@ -1,6 +1,6 @@
 import Category from "../components/Category/Category";
 import Gallery from "../components/Gallery/Gallery";
-import HeaderRandomPicture from "../components/HeaderPicture/HeaderPicture";
+import HeaderPicture from "../components/HeaderPicture/HeaderPicture";
 import Shiggy from "../assets/img/shiggy.gif";
 import { useState } from "react";
 import ScrollTo from "../components/SchrollTo/ScrollTo";
@@ -22,10 +22,7 @@ const RecentlyPage = ({ newGames }) => {
 
   return (
     <div className="page-style">
-      <HeaderRandomPicture
-        titelPage="Recently Add"
-        imgSrc="/img/header3.jpeg"
-      />
+      <HeaderPicture titelPage="Recently Add" imgSrc="/img/header3.jpeg" />
       {loading ? (
         <div
           className="shiggy-wrapper"
