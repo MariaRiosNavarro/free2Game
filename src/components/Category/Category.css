@@ -7,6 +7,7 @@
   font-size: 1.2rem;
   font-weight: 600;
 }
+
 .Form {
   display: flex;
   flex-direction: column;
@@ -14,14 +15,15 @@
   border-radius: 20px;
   padding: 20px;
   height: 0;
-  overflow-y: scroll;
-  transition: height 0.8s ease-in-out;
+  overflow-y: hidden;
+  transition: height 0.5s ease-in-out;
 }
 
 .Form input {
   margin-right: 15px;
   margin-left: 15px;
 }
+
 .select {
   border-radius: 12px;
   background: #ff4654;
@@ -35,6 +37,7 @@
 .filter-categories {
   margin-left: 10vw;
 }
+
 .filter {
   font-family: oswald;
   margin-right: 1vw;
