@@ -3,6 +3,7 @@ import Gallery from "../components/Gallery/Gallery";
 import HeaderPicture from "../components/HeaderPicture/HeaderPicture";
 import Shiggy from "../assets/img/shiggy.gif";
 import { useState } from "react";
+import ScrollTo from "../components/SchrollTo/ScrollTo";
 
 const RecentlyPage = ({ newGames }) => {
   const copyArray = [...newGames];
@@ -21,14 +22,23 @@ const RecentlyPage = ({ newGames }) => {
 
   return (
     <div className="page-style">
+
+     
+
       <HeaderPicture titelPage="Recently Add" imgSrc="/img/header3.jpg" />
+
       {loading ? (
-        <div style={{ width: "fit-content", margin: "0 auto" }}>
-          <img src={Shiggy} alt="" />
+        <div
+          className="shiggy-wrapper"
+          style={{ width: "fit-content", margin: "0 auto" }}
+        >
+          <img className="shiggy-img" src={Shiggy} alt="" />
         </div>
       ) : (
         <>
+          <ScrollTo top={false} />
           <Gallery newGames={copyArray} />
+          <ScrollTo top={true} />
         </>
       )}
     </div>

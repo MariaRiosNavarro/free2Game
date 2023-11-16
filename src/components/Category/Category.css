@@ -95,4 +95,20 @@ input[type="checkbox"]:checked + label:before {
 
 .select:hover {
   transform: scale(1.05);
+
 }
+
+
+
+@media only screen and (max-width: 600px) {
+  .categoryContainer {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 2rem;
+  }
+  .select {
+    width: 100%;
+  }
+}
+

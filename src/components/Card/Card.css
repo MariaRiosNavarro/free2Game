@@ -90,3 +90,33 @@
 /* .badge-img-wrapper img {
   width: auto;
 } */
+
+@media only screen and (max-width: 600px) {
+  .card {
+    height: auto;
+    width: 100%;
+    align-items: center;
+  }
+
+  .card .img-wrapper {
+    height: 40%;
+  }
+
+  .card .text-wrapper {
+    height: 60%;
+  }
+
+  .text-wrapper {
+    padding: 0 4vw;
+  }
+  .description {
+    height: 50px;
+    width: 80%;
+  }
+
+  .separation-line {
+    width: 100%;
+    min-width: 80vw;
+    margin: 0 auto 2vh auto;
+  }
+}

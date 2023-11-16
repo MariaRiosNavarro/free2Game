@@ -52,3 +52,16 @@
   border: none;
   width: 6vw;
 }
+
+/* !Mobile Version */
+
+@media only screen and (max-width: 600px) {
+  .slider-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slider-content .card {
+    width: 100%;
+  }
+}

@@ -97,3 +97,56 @@
 .require-flex p {
   margin-bottom: 3vh;
 }
+
+@media only screen and (max-width: 600px) {
+  .detail-page {
+    padding: 0 24px;
+    padding-top: 68px;
+  }
+  .detail-page h1 {
+    font-size: 2.5rem;
+  }
+
+  .detail-grid {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 48px;
+  }
+
+  .detail-grid .detail-flex img {
+    margin: 2rem auto;
+    height: 22vh;
+    width: auto;
+  }
+  .about {
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  .detail-2col {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+    gap: 24px;
+  }
+
+  .detail-2col img {
+    height: 20vh;
+    width: auto;
+    margin-bottom: 24px;
+  }
+
+  .detail-page .detail-description {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    padding-bottom: 48px;
+  }
+
+  .info-wrapper,
+  .require-wrapper {
+    width: 100%;
+  }
+}

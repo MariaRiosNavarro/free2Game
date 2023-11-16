@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 // import { imgArray } from "../../utils/db";
+import "./HeaderPicture.css";
 
 const HeaderPicture = ({ titelPage, imgSrc }) => {
   // const [game, setGame] = useState("");
