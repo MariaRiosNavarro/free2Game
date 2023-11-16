@@ -32,7 +32,7 @@ nav a {
     justify-content: flex-start;
     align-items: center;
     gap: 5vw;
-
+    width: 80vw;
     padding: 10px 0;
     margin-left: 55px;
   }
