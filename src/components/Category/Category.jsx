@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./Category.css";
-// import Arrow from "../Arrow/Arrow";
-import Arrow from "../../assets/img/Arrow.svg";
 
 const Category = ({ setGames }) => {
   const [isOpenPlatform, setIsOpenPlatform] = useState(false);
@@ -10,6 +8,8 @@ const Category = ({ setGames }) => {
   const [selectedPlatform, setSelectedPlatform] = useState("PLATFORM");
   const [selectedGenre, setSelectedGenre] = useState("GENRE/TAG");
   const [sortBy, setSortBy] = useState("SORT BY");
+
+  // const [isWindowOpen, setIsWindowOpen] = useState(false);
 
   // Zustand, um die ausgewählten Optionen zu speichern
   const [selectedFilters, setSelectedFilters] = useState({
@@ -96,16 +96,26 @@ const Category = ({ setGames }) => {
       : ""
   }`;
 
-  const toggleMenuPlatform = () => {
-    setIsOpenPlatform(!isOpenPlatform);
-  };
-
-  const toggleMenuGenre = () => {
-    setIsOpenGenre(!isOpenGenre);
-  };
-
-  const toggleSortBy = () => {
-    setIsOpenSortBy(!isOpenSortBy);
+  const toggleMenu = (menuType) => {
+    switch (menuType) {
+      case "platform":
+        setIsOpenPlatform(!isOpenPlatform);
+        setIsWindowOpen(!isOpenPlatform);
+        console.log(isOpenPlatform);
+        break;
+      case "genre":
+        setIsOpenGenre(!isOpenGenre);
+        setIsWindowOpen(!isOpenGenre);
+        console.log(isOpenGenre);
+        break;
+      case "sortBy":
+        setIsOpenSortBy(!isOpenSortBy);
+        setIsWindowOpen(!isOpenSortBy);
+        console.log(isOpenSortBy);
+        break;
+      default:
+        break;
+    }
   };
 
   const handleCheckboxChange = (category, value) => {
@@ -150,14 +160,17 @@ const Category = ({ setGames }) => {
         <div className="custom-dropdown">
           <div
             className="selected-Platform select"
-            onClick={toggleMenuPlatform}
+            onClick={() => toggleMenu("platform")}
             onBlur={() => setIsOpenPlatform(false)}
           >
             {selectedPlatform === "platforms" ? "Platforms" : selectedPlatform}
-            <img src={Arrow} className={isOpenPlatform ? "arrow" : ""}></img>
           </div>
           {isOpenPlatform && (
-            <form action="" className="Form">
+            <form
+              action=""
+              className={`Form ${isOpenPlatform ? "open" : ""}`}
+              style={{}}
+            >
               <div className="input-bg">
                 <input
                   type="checkbox"
@@ -197,14 +210,17 @@ const Category = ({ setGames }) => {
         <div className="custom-dropdown">
           <div
             className="selected-Genre select"
-            onClick={toggleMenuGenre}
+            onClick={() => toggleMenu("genre")}
             onBlur={() => setIsOpenGenre(false)}
           >
             {selectedGenre === "genre" ? "Genre" : selectedGenre}
-            <img src={Arrow} className={isOpenGenre ? "arrow" : ""} />
           </div>
           {isOpenGenre && (
-            <form action="" className="Form">
+            <form
+              action=""
+              className={`Form ${isOpenGenre ? "open" : ""}`}
+              style={{}}
+            >
               {gameGenres.map((genre) => (
                 <div key={genre} className="input-bg">
                   <input
@@ -224,14 +240,17 @@ const Category = ({ setGames }) => {
         <div className="custom-dropdown">
           <div
             className="sortBy select"
-            onClick={toggleSortBy}
+            onClick={() => toggleMenu("sortBy")}
             onBlur={() => setIsOpenSortBy(false)}
           >
             {sortBy === "sortby" ? "SortBy" : sortBy}
-            <img src={Arrow} className={isOpenSortBy ? "arrow" : ""} />
           </div>
           {isOpenSortBy && (
-            <form action="" className="Form">
+            <form
+              action=""
+              className={`Form ${isOpenSortBy ? "open" : ""}`}
+              style={{}}
+            >
               <div className="input-bg">
                 <input
                   type="checkbox"
