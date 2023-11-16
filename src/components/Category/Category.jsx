@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./Category.css";
+import Arrow from "../../assets/img/Arrow.svg";
 
 const Category = ({ setGames }) => {
   const [isOpenPlatform, setIsOpenPlatform] = useState(false);
@@ -164,6 +165,7 @@ const Category = ({ setGames }) => {
             onBlur={() => setIsOpenPlatform(false)}
           >
             {selectedPlatform === "platforms" ? "Platforms" : selectedPlatform}
+            <img src={Arrow} className={isOpenPlatform ? "arrow" : ""}></img>
           </div>
           {isOpenPlatform && (
             <form
@@ -214,6 +216,7 @@ const Category = ({ setGames }) => {
             onBlur={() => setIsOpenGenre(false)}
           >
             {selectedGenre === "genre" ? "Genre" : selectedGenre}
+            <img src={Arrow} className={isOpenGenre ? "arrow" : ""} />
           </div>
           {isOpenGenre && (
             <form
@@ -244,6 +247,7 @@ const Category = ({ setGames }) => {
             onBlur={() => setIsOpenSortBy(false)}
           >
             {sortBy === "sortby" ? "SortBy" : sortBy}
+            <img src={Arrow} className={isOpenGenre ? "arrow" : ""} />
           </div>
           {isOpenSortBy && (
             <form
