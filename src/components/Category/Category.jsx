@@ -101,18 +101,15 @@ const Category = ({ setGames }) => {
     switch (menuType) {
       case "platform":
         setIsOpenPlatform(!isOpenPlatform);
-        setIsWindowOpen(!isOpenPlatform);
-        console.log(isOpenPlatform);
+        // console.log(isOpenPlatform);
         break;
       case "genre":
         setIsOpenGenre(!isOpenGenre);
-        setIsWindowOpen(!isOpenGenre);
-        console.log(isOpenGenre);
+        // console.log(isOpenGenre);
         break;
       case "sortBy":
         setIsOpenSortBy(!isOpenSortBy);
-        setIsWindowOpen(!isOpenSortBy);
-        console.log(isOpenSortBy);
+        // console.log(isOpenSortBy);
         break;
       default:
         break;
