@@ -282,7 +282,7 @@ const Category = ({ setGames }) => {
             >
               X
             </button>
-            {filter}
+            {filter[0].toUpperCase() + filter.slice(1)}
           </span>
         ))}
         {selectedFilters.genre.map((filter) => (
@@ -293,7 +293,7 @@ const Category = ({ setGames }) => {
             >
               X
             </button>
-            {filter}
+            {filter[0].toUpperCase() + filter.slice(1)}
           </span>
         ))}
         {selectedFilters.sortBy.map((filter) => (
@@ -304,7 +304,7 @@ const Category = ({ setGames }) => {
             >
               X
             </button>
-            {filter}
+            {filter[0].toUpperCase() + filter.slice(1)}
           </span>
         ))}
       </div>
