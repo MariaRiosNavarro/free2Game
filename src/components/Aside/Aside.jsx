@@ -6,6 +6,7 @@ import Home from "../../assets/img/Home.svg";
 import Added from "../../assets/img/Added.svg";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import ShiggyLoad from "../../assets/img/shiggy_load.gif";
 
 const Aside = () => {
   // # Toggelt die sidebar und dementsprechend die buttons, standardmäßig false
@@ -49,6 +50,9 @@ const Aside = () => {
             {sideBar ? <p>Recently Added</p> : null}
           </div>
         </NavLink>
+      </div>
+      <div className="shiggy-sidebar">
+        {sideBar ? <img className="shiggy-load" src={ShiggyLoad}></img> : null}
       </div>
     </aside>
   );

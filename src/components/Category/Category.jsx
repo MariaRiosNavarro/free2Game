@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Category.css";
+// import Arrow from "../Arrow/Arrow";
+import Arrow from "../../assets/img/Arrow.svg";
 
 const Category = ({ setGames }) => {
   const [isOpenPlatform, setIsOpenPlatform] = useState(false);
@@ -152,6 +154,7 @@ const Category = ({ setGames }) => {
             onBlur={() => setIsOpenPlatform(false)}
           >
             {selectedPlatform === "platforms" ? "Platforms" : selectedPlatform}
+            <img src={Arrow} className={isOpenPlatform ? "arrow" : ""}></img>
           </div>
           {isOpenPlatform && (
             <form action="" className="Form">
@@ -198,6 +201,7 @@ const Category = ({ setGames }) => {
             onBlur={() => setIsOpenGenre(false)}
           >
             {selectedGenre === "genre" ? "Genre" : selectedGenre}
+            <img src={Arrow} className={isOpenGenre ? "arrow" : ""} />
           </div>
           {isOpenGenre && (
             <form action="" className="Form">
@@ -224,6 +228,7 @@ const Category = ({ setGames }) => {
             onBlur={() => setIsOpenSortBy(false)}
           >
             {sortBy === "sortby" ? "SortBy" : sortBy}
+            <img src={Arrow} className={isOpenSortBy ? "arrow" : ""} />
           </div>
           {isOpenSortBy && (
             <form action="" className="Form">
@@ -284,7 +289,6 @@ const Category = ({ setGames }) => {
             </button>
 
             {filter[0].toUpperCase() + filter.slice(1)}
-
           </span>
         ))}
         {selectedFilters.genre.map((filter, index) => (
@@ -297,7 +301,6 @@ const Category = ({ setGames }) => {
             </button>
 
             {filter[0].toUpperCase() + filter.slice(1)}
-
           </span>
         ))}
         {selectedFilters.sortBy.map((filter, index) => (
@@ -310,7 +313,6 @@ const Category = ({ setGames }) => {
             </button>
 
             {filter[0].toUpperCase() + filter.slice(1)}
-
           </span>
         ))}
       </div>
