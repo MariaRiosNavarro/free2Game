@@ -39,7 +39,8 @@
 /* Animation um auf zu gehen */
 
 .Form.open {
-  animation: fadeIn 1.5s ease-in-out forwards;
+  /* animation: fadeIn 1.5s ease-in-out forwards; */
+  animation: openForm 0.4s ease-in-out forwards;
 }
 
 /* Style schrollbar */
@@ -190,3 +191,40 @@ input[type="checkbox"]:checked + label:before {
     opacity: 0;
   }
 } */
+
+@keyframes openForm {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+
+  5% {
+    height: 2vh;
+    opacity: 0.2;
+  }
+
+  20% {
+    height: 5vh;
+    opacity: 0.5;
+  }
+
+  40% {
+    height: 8vh;
+    opacity: 0.8;
+  }
+
+  60% {
+    height: 12vh;
+    opacity: 0.9;
+  }
+
+  80% {
+    height: 18vh;
+    opacity: 1;
+  }
+
+  100% {
+    height: 22vh;
+    opacity: 1;
+  }
+}
