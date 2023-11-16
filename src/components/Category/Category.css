@@ -14,7 +14,7 @@
   border-radius: 20px;
   padding: 20px;
   max-height: 22vh;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 .Form input {
@@ -95,10 +95,7 @@ input[type="checkbox"]:checked + label:before {
 
 .select:hover {
   transform: scale(1.05);
-
 }
-
-
 
 @media only screen and (max-width: 600px) {
   .categoryContainer {
@@ -111,4 +108,3 @@ input[type="checkbox"]:checked + label:before {
     width: 100%;
   }
 }
-

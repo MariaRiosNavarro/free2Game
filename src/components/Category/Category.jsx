@@ -94,16 +94,20 @@ const Category = ({ setGames }) => {
       : ""
   }`;
 
-  const toggleMenuPlatform = () => {
-    setIsOpenPlatform(!isOpenPlatform);
-  };
-
-  const toggleMenuGenre = () => {
-    setIsOpenGenre(!isOpenGenre);
-  };
-
-  const toggleSortBy = () => {
-    setIsOpenSortBy(!isOpenSortBy);
+  const toggleMenu = (menuType) => {
+    switch (menuType) {
+      case "platform":
+        setIsOpenPlatform(!isOpenPlatform);
+        break;
+      case "genre":
+        setIsOpenGenre(!isOpenGenre);
+        break;
+      case "sortBy":
+        setIsOpenSortBy(!isOpenSortBy);
+        break;
+      default:
+        break;
+    }
   };
 
   const handleCheckboxChange = (category, value) => {
@@ -148,13 +152,17 @@ const Category = ({ setGames }) => {
         <div className="custom-dropdown">
           <div
             className="selected-Platform select"
-            onClick={toggleMenuPlatform}
+            onClick={() => toggleMenu("platform")}
             onBlur={() => setIsOpenPlatform(false)}
           >
             {selectedPlatform === "platforms" ? "Platforms" : selectedPlatform}
           </div>
           {isOpenPlatform && (
-            <form action="" className="Form">
+            <form
+              action=""
+              className="Form"
+              style={{ maxHeight: isOpenPlatform ? "22vh" : "0" }}
+            >
               <div className="input-bg">
                 <input
                   type="checkbox"
@@ -194,13 +202,17 @@ const Category = ({ setGames }) => {
         <div className="custom-dropdown">
           <div
             className="selected-Genre select"
-            onClick={toggleMenuGenre}
+            onClick={() => toggleMenu("genre")}
             onBlur={() => setIsOpenGenre(false)}
           >
             {selectedGenre === "genre" ? "Genre" : selectedGenre}
           </div>
           {isOpenGenre && (
-            <form action="" className="Form">
+            <form
+              action=""
+              className="Form"
+              style={{ maxHeight: isOpenGenre ? "22vh" : "0" }}
+            >
               {gameGenres.map((genre) => (
                 <div key={genre} className="input-bg">
                   <input
@@ -220,13 +232,17 @@ const Category = ({ setGames }) => {
         <div className="custom-dropdown">
           <div
             className="sortBy select"
-            onClick={toggleSortBy}
+            onClick={() => toggleMenu("sortBy")}
             onBlur={() => setIsOpenSortBy(false)}
           >
             {sortBy === "sortby" ? "SortBy" : sortBy}
           </div>
           {isOpenSortBy && (
-            <form action="" className="Form">
+            <form
+              action=""
+              className="Form"
+              style={{ maxHeight: isOpenSortBy ? "22vh" : "0" }}
+            >
               <div className="input-bg">
                 <input
                   type="checkbox"
@@ -284,7 +300,6 @@ const Category = ({ setGames }) => {
             </button>
 
             {filter[0].toUpperCase() + filter.slice(1)}
-
           </span>
         ))}
         {selectedFilters.genre.map((filter, index) => (
@@ -297,7 +312,6 @@ const Category = ({ setGames }) => {
             </button>
 
             {filter[0].toUpperCase() + filter.slice(1)}
-
           </span>
         ))}
         {selectedFilters.sortBy.map((filter, index) => (
@@ -310,7 +324,6 @@ const Category = ({ setGames }) => {
             </button>
 
             {filter[0].toUpperCase() + filter.slice(1)}
-
           </span>
         ))}
       </div>
