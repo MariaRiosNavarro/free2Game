@@ -14,9 +14,14 @@
   background-color: #102130;
   border-radius: 20px;
   padding: 20px;
-  height: 0;
-  overflow-y: hidden;
-  transition: height 0.5s ease-in-out;
+  max-height: 0; /* Initiale Höhe auf 0 setzen */
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.open {
+  max-height: 22vh;
+  overflow-y: scroll;
 }
 
 .Form input {

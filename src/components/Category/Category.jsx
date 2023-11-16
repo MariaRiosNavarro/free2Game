@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./Category.css";
 
 const Category = ({ setGames }) => {
@@ -98,12 +98,15 @@ const Category = ({ setGames }) => {
     switch (menuType) {
       case "platform":
         setIsOpenPlatform(!isOpenPlatform);
+        console.log(isOpenPlatform);
         break;
       case "genre":
         setIsOpenGenre(!isOpenGenre);
+        console.log(isOpenGenre);
         break;
       case "sortBy":
         setIsOpenSortBy(!isOpenSortBy);
+        console.log(isOpenSortBy);
         break;
       default:
         break;
@@ -160,8 +163,8 @@ const Category = ({ setGames }) => {
           {isOpenPlatform && (
             <form
               action=""
-              className="Form"
-              style={{ maxHeight: isOpenPlatform ? "22vh" : "0" }}
+              className={`Form ${isOpenPlatform ? "open" : ""}`}
+              style={{}}
             >
               <div className="input-bg">
                 <input
@@ -210,8 +213,8 @@ const Category = ({ setGames }) => {
           {isOpenGenre && (
             <form
               action=""
-              className="Form"
-              style={{ maxHeight: isOpenGenre ? "22vh" : "0" }}
+              className={`Form ${isOpenGenre ? "open" : ""}`}
+              style={{}}
             >
               {gameGenres.map((genre) => (
                 <div key={genre} className="input-bg">
@@ -240,8 +243,8 @@ const Category = ({ setGames }) => {
           {isOpenSortBy && (
             <form
               action=""
-              className="Form"
-              style={{ maxHeight: isOpenSortBy ? "22vh" : "0" }}
+              className={`Form ${isOpenSortBy ? "open" : ""}`}
+              style={{}}
             >
               <div className="input-bg">
                 <input
