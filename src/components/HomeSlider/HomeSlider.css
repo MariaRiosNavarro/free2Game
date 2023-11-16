@@ -8,6 +8,7 @@
   align-items: center;
   max-width: 100vw;
   margin-bottom: 5vh;
+  padding: 24px 0;
 }
 
 .slider-content {
@@ -47,6 +48,7 @@
 
 .two,
 .one {
+  z-index: 4;
   border: none;
   width: 6vw;
 }

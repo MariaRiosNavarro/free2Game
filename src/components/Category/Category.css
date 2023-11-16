@@ -13,6 +13,8 @@
   background-color: #102130;
   border-radius: 20px;
   padding: 20px;
+  max-height: 22vh;
+  overflow-y: auto;
 }
 
 .Form input {
@@ -26,6 +28,7 @@
   width: 17.2vw;
   text-transform: uppercase;
   cursor: pointer;
+  transition: transform 0.2s ease-in-out;
 }
 
 .filter-categories {
@@ -88,4 +91,8 @@ input[type="checkbox"]:checked + label:before {
   margin: 5px 0;
   padding: 10px;
   border-radius: 10px;
+}
+
+.select:hover {
+  transform: scale(1.05);
 }

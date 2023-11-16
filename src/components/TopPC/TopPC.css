@@ -64,7 +64,7 @@
   left: 36px;
   margin: 0;
   padding: 0;
-  bottom: 195px;
+  bottom: 30px;
 }
 
 .card-wrapper-1 .card .text-wrapper h4 {
@@ -107,7 +107,7 @@
   flex: 0 0 55%;
   position: relative;
   overflow: hidden;
-  height: auto;
+  height: 25vh;
   width: auto;
 }
 

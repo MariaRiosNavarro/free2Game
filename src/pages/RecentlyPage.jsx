@@ -1,6 +1,6 @@
 import Category from "../components/Category/Category";
 import Gallery from "../components/Gallery/Gallery";
-import HeaderRandomPicture from "../components/HeaderPicture/HeaderPicture";
+import HeaderPicture from "../components/HeaderPicture/HeaderPicture";
 import Shiggy from "../assets/img/shiggy.gif";
 import { useState } from "react";
 
@@ -21,10 +21,7 @@ const RecentlyPage = ({ newGames }) => {
 
   return (
     <div className="page-style">
-      <HeaderRandomPicture
-        titelPage="Recently Add"
-        imgSrc="/img/header3.jpeg"
-      />
+      <HeaderPicture titelPage="Recently Add" imgSrc="/img/header3.jpg" />
       {loading ? (
         <div style={{ width: "fit-content", margin: "0 auto" }}>
           <img src={Shiggy} alt="" />
