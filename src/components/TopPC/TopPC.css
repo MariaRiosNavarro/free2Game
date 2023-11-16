@@ -143,8 +143,9 @@
   }
 
   .card-wrapper .text-wrapper {
-    width: 100%;
+    width: auto;
     position: static;
+    padding-left: 24px;
   }
 
   .card-wrapper .separation-line {
