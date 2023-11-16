@@ -28,7 +28,6 @@ input[name="hidden-scroll"]:checked + label:before {
   margin: 0 !important;
 } */
 
-/* Esto de abajo si funciona  */
 .scroll-wrapper .scroll-to-btn {
   position: fixed;
   height: 100%;
@@ -46,7 +45,7 @@ input[name="hidden-scroll"]:checked + label:before {
   z-index: 50;
   line-height: 40px;
   cursor: pointer;
-  background-color: red;
+  background-color: #ff4654;
 }
 
 /* --- */
@@ -83,7 +82,7 @@ input[name="hidden-scroll"]:checked + label:before {
     height: 2.5rem;
     padding: 0.5rem;
     font-size: 1.5rem;
-    top: 95vh;
+    top: 93vh;
   }
 
   .scroll-wrapper .left {

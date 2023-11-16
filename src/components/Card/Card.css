@@ -108,6 +108,7 @@
 
   .text-wrapper {
     padding: 0 4vw;
+    width: 90vw;
   }
   .description {
     height: 50px;
