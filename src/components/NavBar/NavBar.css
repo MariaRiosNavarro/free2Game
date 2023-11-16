@@ -24,3 +24,25 @@ nav a {
 .logo {
   width: 220px;
 }
+
+/* !Mobile Version */
+
+@media only screen and (max-width: 600px) {
+  nav {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5vw;
+    width: 80vw;
+    padding: 10px 0;
+    margin-left: 55px;
+  }
+  .logo {
+    width: 70px;
+    position: relative;
+    left: 0;
+  }
+  .search {
+    width: 220px;
+    padding-left: 7vw;
+  }
+}

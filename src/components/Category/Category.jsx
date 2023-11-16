@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Category.css";
+// import Arrow from "../Arrow/Arrow";
+import Arrow from "../../assets/img/Arrow.svg";
 
 const Category = ({ setGames }) => {
   const [isOpenPlatform, setIsOpenPlatform] = useState(false);
@@ -123,7 +125,7 @@ const Category = ({ setGames }) => {
 
     // Aktualisiere den Zustand mit den neuen ausgewählten Filtern
     setSelectedFilters(newSelectedFilters);
-    console.log("Selected Filters:", selectedFilters);
+    //  ! console.log("Selected Filters:", selectedFilters);
   };
 
   const removeFilter = (category, value) => {
@@ -152,10 +154,11 @@ const Category = ({ setGames }) => {
             onBlur={() => setIsOpenPlatform(false)}
           >
             {selectedPlatform === "platforms" ? "Platforms" : selectedPlatform}
+            <img src={Arrow} className={isOpenPlatform ? "arrow" : ""}></img>
           </div>
           {isOpenPlatform && (
             <form action="" className="Form">
-              <div>
+              <div className="input-bg">
                 <input
                   type="checkbox"
                   value="all"
@@ -166,7 +169,7 @@ const Category = ({ setGames }) => {
                 />
                 <label htmlFor="allPlatforms">all Platforms</label>
               </div>
-              <div>
+              <div className="input-bg">
                 <input
                   type="checkbox"
                   value="pc"
@@ -177,7 +180,7 @@ const Category = ({ setGames }) => {
                 />
                 <label htmlFor="windows">Windows</label>
               </div>
-              <div>
+              <div className="input-bg">
                 <input
                   type="checkbox"
                   value="browser"
@@ -198,11 +201,12 @@ const Category = ({ setGames }) => {
             onBlur={() => setIsOpenGenre(false)}
           >
             {selectedGenre === "genre" ? "Genre" : selectedGenre}
+            <img src={Arrow} className={isOpenGenre ? "arrow" : ""} />
           </div>
           {isOpenGenre && (
             <form action="" className="Form">
               {gameGenres.map((genre) => (
-                <div key={genre}>
+                <div key={genre} className="input-bg">
                   <input
                     type="checkbox"
                     value={genre}
@@ -224,10 +228,11 @@ const Category = ({ setGames }) => {
             onBlur={() => setIsOpenSortBy(false)}
           >
             {sortBy === "sortby" ? "SortBy" : sortBy}
+            <img src={Arrow} className={isOpenSortBy ? "arrow" : ""} />
           </div>
           {isOpenSortBy && (
             <form action="" className="Form">
-              <div>
+              <div className="input-bg">
                 <input
                   type="checkbox"
                   name="relevance"
@@ -237,7 +242,7 @@ const Category = ({ setGames }) => {
                 />
                 <label htmlFor="relevance">Relevance</label>
               </div>
-              <div>
+              <div className="input-bg">
                 <input
                   type="checkbox"
                   name="popularity"
@@ -247,7 +252,7 @@ const Category = ({ setGames }) => {
                 />
                 <label htmlFor="popularity">Popularity</label>
               </div>
-              <div>
+              <div className="input-bg">
                 <input
                   type="checkbox"
                   name="releaseDate"
@@ -257,7 +262,7 @@ const Category = ({ setGames }) => {
                 />
                 <label htmlFor="releaseDate">Release Date</label>
               </div>
-              <div>
+              <div className="input-bg">
                 <input
                   type="checkbox"
                   name="alphabetical"
@@ -274,37 +279,40 @@ const Category = ({ setGames }) => {
         </div>
       </div>
       <div className="filter-categories">
-        {selectedFilters.platform.map((filter) => (
-          <span key={filter} className="filter">
+        {selectedFilters.platform.map((filter, index) => (
+          <span key={index} className="filter">
             <button
               className="remove-filter"
               onClick={() => removeFilter("platform", filter)}
             >
               X
             </button>
-            {filter}
+
+            {filter[0].toUpperCase() + filter.slice(1)}
           </span>
         ))}
-        {selectedFilters.genre.map((filter) => (
-          <span key={filter} className="filter">
+        {selectedFilters.genre.map((filter, index) => (
+          <span key={index} className="filter">
             <button
               className="remove-filter"
               onClick={() => removeFilter("genre", filter)}
             >
               X
             </button>
-            {filter}
+
+            {filter[0].toUpperCase() + filter.slice(1)}
           </span>
         ))}
-        {selectedFilters.sortBy.map((filter) => (
-          <span key={filter} className="filter">
+        {selectedFilters.sortBy.map((filter, index) => (
+          <span key={index} className="filter">
             <button
               className="remove-filter"
               onClick={() => removeFilter("sortBy", filter)}
             >
               X
             </button>
-            {filter}
+
+            {filter[0].toUpperCase() + filter.slice(1)}
           </span>
         ))}
       </div>

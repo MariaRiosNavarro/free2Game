@@ -17,9 +17,27 @@ const Card = (props) => {
         <Button href={`/detail/${props.item.id}`} btnName="READ MORE" />
         <div className="separation-line"></div>
         <div className="badge-wrapper">
-          <span className="badge badge-img-wrapper">
-            {props.item.platform === "Web Browser" ? <BrowserSvg /> : <PCSvg />}
-          </span>
+          {props.item.platform.length > 12 ? (
+            <>
+              <span className="badge badge-img-wrapper">
+                <BrowserSvg />
+              </span>
+              <span className="badge badge-img-wrapper">
+                <PCSvg />
+              </span>
+            </>
+          ) : (
+            <>
+              <span className="badge badge-img-wrapper">
+                {props.item.platform === "Web Browser" ? (
+                  <BrowserSvg />
+                ) : (
+                  <PCSvg />
+                )}
+              </span>
+            </>
+          )}
+
           <p className="badge bagge-genre card-category">{props.item.genre}</p>
         </div>
       </div>
