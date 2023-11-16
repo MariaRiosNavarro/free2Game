@@ -28,6 +28,7 @@
   width: 17.2vw;
   text-transform: uppercase;
   cursor: pointer;
+  transition: transform 0.2s ease-in-out;
 }
 
 .filter-categories {
@@ -92,7 +93,12 @@ input[type="checkbox"]:checked + label:before {
   border-radius: 10px;
 }
 
-/* !Mobile Version */
+.select:hover {
+  transform: scale(1.05);
+
+}
+
+
 
 @media only screen and (max-width: 600px) {
   .categoryContainer {
@@ -105,3 +111,4 @@ input[type="checkbox"]:checked + label:before {
     width: 100%;
   }
 }
+

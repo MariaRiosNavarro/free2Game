@@ -22,7 +22,11 @@ const RecentlyPage = ({ newGames }) => {
 
   return (
     <div className="page-style">
-      <HeaderPicture titelPage="Recently Add" imgSrc="/img/header3.jpeg" />
+
+     
+
+      <HeaderPicture titelPage="Recently Add" imgSrc="/img/header3.jpg" />
+
       {loading ? (
         <div
           className="shiggy-wrapper"
