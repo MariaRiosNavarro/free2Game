@@ -16,6 +16,8 @@ const Aside = () => {
     showSide(!sideBar);
   };
 
+  let media = window.matchMedia("(max-width: 600px)");
+
   return (
     // ! sideBar ? "true= sidebar erscheint und burgermenü wird zu close button" : " alles umgedreht";
     <aside className={sideBar ? "asideWide" : null}>
@@ -30,21 +32,21 @@ const Aside = () => {
       )}
 
       <div className="navicon-wrapper">
-        <NavLink to={"/"}>
+        <NavLink onClick={media.matches ? showBar : null} to={"/"}>
           <div className="asideIcon">
             <img src={Home} alt="" />
             {sideBar ? <p>Home</p> : null}
           </div>
         </NavLink>
 
-        <NavLink to={"/allgames"}>
+        <NavLink onClick={media.matches ? showBar : null} to={"/allgames"}>
           <div className="asideIcon">
             <img src={Games} alt="" />
             {sideBar ? <p>All Games</p> : null}
           </div>
         </NavLink>
 
-        <NavLink to={"/recently"}>
+        <NavLink onClick={media.matches ? showBar : null} to={"/recently"}>
           <div className="asideIcon">
             <img src={Added} alt="" />
             {sideBar ? <p>Recently Added</p> : null}

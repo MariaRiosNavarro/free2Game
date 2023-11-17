@@ -20,7 +20,7 @@ const NavBar = (props) => {
   const handleOnSelect = (item) => {
     // the item selected
     console.log(item);
-    navigate(`/detail/${item.id}`, { replace: true });
+    navigate(`./detail/${item.id}`, { replace: true });
     navigate(0);
   };
 
