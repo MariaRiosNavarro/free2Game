@@ -1,6 +1,6 @@
 # Free2Game
 
-Final project Fullstack Developer Supercode - (Frontend part),
+Final project Fullstack Developer Supercode - (Frontend part)
 
 42 Pull Request
 
@@ -16,15 +16,23 @@ Team: Isabella, Andre, Yan, Maria
 
 # Tech Stack
 
-React
-CSS
-Vercel
-Netlify
-Git
-npm
-react-search-autocomplete
-FigJam
-Discord
+- React
+
+- CSS
+
+- Vercel
+
+- Netlify
+
+- Git
+
+- npm
+
+- react-search-autocomplete
+
+- FigJam
+
+- Discord
 
 # How to set it up
 
