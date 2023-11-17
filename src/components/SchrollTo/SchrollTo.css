@@ -2,12 +2,14 @@
 
 input[name="hidden-scroll"] {
   display: none !important;
+  outline: none;
 }
 
 input[name="hidden-scroll"] + label {
   position: relative;
   padding-left: 0;
   cursor: pointer;
+  outline: none;
 }
 
 input[name="hidden-scroll"] + label:before {
@@ -18,9 +20,10 @@ input[name="hidden-scroll"] + label:before {
   border: none !important;
   background-color: transparent !important;
   margin-top: 0 !important;
+  outline: none;
 }
-/*
-input[name="hidden-scroll"]:checked + label:before {
+
+/* input[name="hidden-scroll"]:checked + label:before {
   background-color: transparent !important;
   content: "";
   border: none !important;
@@ -38,7 +41,7 @@ input[name="hidden-scroll"]:checked + label:before {
   /* font-size: 1.5rem;
   width: 3rem;
   height: 3rem; */
-  color: transparent;
+  color: #040f14;
   /* border-radius: 50%; */
   text-align: center;
   cursor: pointer;
@@ -46,6 +49,7 @@ input[name="hidden-scroll"]:checked + label:before {
   z-index: 50;
   line-height: 40px;
   cursor: pointer;
+
   /* background-color: #ff4654; */
 }
 
@@ -58,9 +62,8 @@ input[name="hidden-scroll"]:checked + label:before {
   border-width: 0 12px 23px 12px;
   border-color: transparent transparent #ff4532 transparent;
   transform: rotate(0deg);
-
   right: 1.4rem;
-  top: 52rem;
+  top: 48rem;
 }
 
 .scroll-wrapper .left {
@@ -72,7 +75,36 @@ input[name="hidden-scroll"]:checked + label:before {
   transform: rotate(180deg);
   /* left: 8rem; */
   right: 1.4rem;
-  top: 54rem;
+  top: 50rem;
+}
+
+.scroll-to-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.down,
+.up {
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  position: relative;
+  right: 0.95rem;
+  top: 0.7rem;
+  font-family: Helvetica, sans-serif;
+  letter-spacing: 0.1em;
+}
+
+.down {
+  top: 0.6rem;
+  font-size: 1rem;
+}
+
+.down {
+  transform: rotate(180deg);
 }
 
 .scroll-wrapper .scroll-to-btn:hover {
