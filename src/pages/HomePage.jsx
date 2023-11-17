@@ -23,7 +23,7 @@ const HomePage = ({ newGames }) => {
         </div>
 
         <div className="container-home">
-          <h3>Top 4 Games in November 2023</h3>
+          <h3>Top 4 Games for PC in November 2023</h3>
           <TopPC />
           <div className="show-more">
             <Button href="/recently" btnName="SHOW MORE" />
