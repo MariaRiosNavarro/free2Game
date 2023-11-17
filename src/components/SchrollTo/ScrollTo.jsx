@@ -34,7 +34,11 @@ const ScrollTo = ({ top }) => {
         className={`scroll-to-btn ${top ? "right" : "left"} flex-label`}
         onClick={handleScroll}
       >
-        {top ? "UP" : "DOWN"}
+        {top ? (
+          <span className="up">UP</span>
+        ) : (
+          <span className="down">DOWN</span>
+        )}
       </label>
     </div>
   );

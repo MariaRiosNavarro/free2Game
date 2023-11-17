@@ -38,7 +38,7 @@ input[name="hidden-scroll"]:checked + label:before {
   /* font-size: 1.5rem;
   width: 3rem;
   height: 3rem; */
-  color: transparent;
+  color: white;
   /* border-radius: 50%; */
   text-align: center;
   cursor: pointer;
@@ -58,9 +58,8 @@ input[name="hidden-scroll"]:checked + label:before {
   border-width: 0 12px 23px 12px;
   border-color: transparent transparent #ff4532 transparent;
   transform: rotate(0deg);
-
   right: 1.4rem;
-  top: 52rem;
+  top: 48rem;
 }
 
 .scroll-wrapper .left {
@@ -72,7 +71,29 @@ input[name="hidden-scroll"]:checked + label:before {
   transform: rotate(180deg);
   /* left: 8rem; */
   right: 1.4rem;
-  top: 54rem;
+  top: 50rem;
+}
+
+.scroll-to-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.down,
+.up {
+  font-size: 0.7rem;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  position: relative;
+  right: 0.95rem;
+  top: 0.8rem;
+}
+
+.down {
+  transform: rotate(180deg);
 }
 
 .scroll-wrapper .scroll-to-btn:hover {
