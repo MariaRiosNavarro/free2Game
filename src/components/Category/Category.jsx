@@ -77,11 +77,41 @@ const Category = ({ setGames }) => {
   };
 
   useEffect(() => {
-    fetch(url, options)
+    fetch(url4, options)
       .then((res) => res.json())
       .then((data) => setGames(data))
       .catch((err) => console.error("Yan junge hör auf damit", err));
   }, [selectedFilters]);
+
+  let url4 = `https://free-to-play-games-database.p.rapidapi.com/api/${
+    selectedFilters.genre.length > 0
+      ? `filter?${
+          selectedFilters.genre.length > 0
+            ? `tag=${selectedFilters.genre.join(".")}`
+            : ""
+        }${
+          selectedFilters.platform.length > 0
+            ? `&platform=${selectedFilters.platform.join("&")}`
+            : ""
+        }${
+          selectedFilters.sortBy.length > 0
+            ? `&sort-by=${selectedFilters.sortBy.join("&")}`
+            : ""
+        }`
+      : `games?${
+          selectedFilters.platform.length > 0
+            ? `platform=${selectedFilters.platform.join("&")}`
+            : ""
+        }${
+          selectedFilters.genre.length > 0
+            ? `&category=${selectedFilters.genre.join("&")}`
+            : ""
+        }${
+          selectedFilters.sortBy.length > 0
+            ? `&sort-by=${selectedFilters.sortBy.join("&")}`
+            : ""
+        }`
+  }`;
 
   let url = `https://free-to-play-games-database.p.rapidapi.com/api/games?${
     selectedFilters.platform.length > 0
