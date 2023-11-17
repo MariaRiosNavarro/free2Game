@@ -11,7 +11,6 @@ const Gallery = ({ newGames }) => {
           newGames.map((item) => <Card key={item.id} item={item} />)
         ) : (
           <div>
-            {/* {setTimeout(() => { }, 2000)} */}
             <div>
               <h2>No results...</h2>
               <img src={Pikachu} alt="" />
